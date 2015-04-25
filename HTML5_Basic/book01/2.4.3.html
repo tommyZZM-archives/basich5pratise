@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>contentEditable可编辑文字</title>
+    <script type="text/javascript" async>
+        function Btn_Click() {
+            var strArt = document.getElementById("art_0").innerHTML;
+            var objArt = document.getElementById("art_1");
+            objArt.innerHTML = '<b>哈哈</b>' + strArt;
+        }
+    </script>
+</head>
+<body>
+<article contenteditable="true" class="p3_10" id="art_0">
+    <strong>一段可编辑的文字:</strong>今天弄了一下午Aptana..
+</article>
+<article class="p3_10" id="art_1"></article>
+<input type="button" value="保存" class="inpurbtn" onClick="Btn_Click();">
+</body>
+</html>

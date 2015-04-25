@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery选择器</title>
+
+    <!-- Bootstrap style-->
+    <!--<link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="../../../Bootstrap_Study/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+
+    <link href="../../../style_for_sample.css" rel="stylesheet">
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header">jQuery选择器要点</h1>
+            <p>jQuery的选择器种类请参考相关文档,如<a target="_blank" href="http://tool.oschina.net/apidocs/apidoc?api=jquery">在线文档-jquery</a></p>
+
+            <h3>难点&要点</h3>
+            <div class="tomy-mk tomy-mk-blue">
+                <h4><code>$("ancestor descendant")</code> 和 <code>$("element1,element2")</code> 的区别</h4>
+                <p><code>$("ancestor descendant")</code> 表示选择父元素ancestor以下的<strong class="text-danger">后代某元素</strong>,
+                    <code>$("element1,element2")</code> 表示选择element1 和 element2</p>
+            </div>
+            <div class="tomy-mk tomy-mk-yellow">
+                <h4><code>$("ancestor descendant")</code> 和 <code>$("parent>child")</code> 的区别</h4>
+                <div class="tomy-sp1 tomy-center">
+                    <strong>root</strong>
+                    <div class="tomy-sp1">
+                        <strong>child_I</strong>
+                        <div class="tomy-sp1">
+                            <strong>child_II</strong>
+                        </div>
+                    </div>
+                </div>
+                <p><code>child_I</code> 是 <code>root</code>的子元素,<code>child_II</code> 是 <code>child_I</code>的子元素,<strong>子元素只表示一个层级</strong></p>
+                <p><code>child_I</code> 和 <code>child_II</code>都是<code>root</code>的后代元素,<strong>后代元素表示以下所有层级的元素</strong></p>
+                <p class="text-warning">子元素一定是后代元素,当只表示一个层级时两者没有区别</p>
+            </div>
+            <div class="tomy-mk tomy-mk-blue">
+                <h4><code>:first</code> 和 <code>:first-child</code> 的区别</h4>
+                <p><code>:first</code> 指整个页面的第一个某元素 , <code>:first-child</code>指容器中的第一个某元素. 对于同一个元素,一个页面只有一个 <code>:first</code> 但可以有多个 <code>:first-child</code></p>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

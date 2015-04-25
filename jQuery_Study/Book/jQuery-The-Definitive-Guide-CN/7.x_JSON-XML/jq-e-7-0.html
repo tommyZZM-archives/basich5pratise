@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>操作JSON和XML</title>
+
+    <!-- Bootstrap style-->
+    <link href="../../../../Bootstrap_Study/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../jquery-2.1.1.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="../../../../Bootstrap_Study/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+
+    <link href="../../../../style_for_sample.css" rel="stylesheet">
+
+    <script>
+        $(function(){
+            createJSON();
+            createJSONEx();
+            praseJSON();
+        })
+
+        function createJSON(){
+            var obj = {'a':"tommy"}
+            var json_str = JSON.stringify(obj);
+            $("#createJSON").text(json_str);
+        }
+
+        function createJSONEx(){
+            var obj = {'a':"tommy",'b':{'arr2':[[1,2,3],[4,5,6],['a','b','c']]}}
+            var json_str = JSON.stringify(obj);
+            $("#createJSONEx").text(json_str);
+        }
+
+        function praseJSON(){
+            var json_str ='{"b":"tommy-str"}';
+            var json = JSON.parse(json_str);
+            var re_str = JSON.stringify(json);
+            $("#praseJSON").text(re_str);
+        }
+
+    </script>
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header">JavaScript操作JSON和XML</h1>
+            <h3>创建一只<code>JSON字符串</code>的步骤</h3>
+            <div class="tomy-sp1">
+                <ol>
+                    <li><code>var obj = {};</code> //创建一个对象( 等价于var obj = new Object() )</li>
+                    <li><code>var obj.a = "tommy";</code> //给对象创建a属性并赋值
+                        <br>(你也可以在创建对象的时候创建属性 <code>var obj = {'a':"tommy"}</code>)</li>
+                    <li><code>var json = JSON.stringify(obj);</code> //把obj对象转换成为json字符串</li>
+                </ol>
+                <pre id="createJSON"></pre>
+            </div>
+
+            <h3>JSON的内容の转换</h3>
+            <p>JSON的内容可以按照相应的格式自由堆砌组合包装...</p>
+            <div class="tomy-sp1">
+                <pre id="createJSONEx"></pre>
+                <p>对于JSON字符串<code>'{"b":"tommy-str"}'</code>(<small>注意外层是''包裹,里面是""包裹</small>),我们可以使用<code>JSON.parse(str);</code>把它转换成对象</p>
+                <pre id="praseJSON"></pre>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery操作数组中的元素</title>
+
+    <!-- Bootstrap style-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link href="../../../../style_for_sample.css" rel="stylesheet">
+
+    <script>
+        $(function(){
+            var arrNum = ['c','h','g','e']
+            var tommy1 = $.grep(arrNum,function(n,i){
+                return i>1; //a表示数组里的元素，i表示元素序号，这里是指序号大于1的元素
+            });
+            $('#trace1').text(tommy1);
+
+            var tommy2 = $.map(arrNum,function(n){
+                return n+'e';
+            })
+            $('#trace2').text(tommy2);
+
+        })
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header">jQuery操作数组中的元素</h1>
+            <h3>使用$.each()遍历数组中的元素或对象属性</h3>
+            <code>jQuery.each(object, [callback])</code>
+            <p>如果能用<code>for</code>循环遍历，则尽量使用for循环</p>
+
+            <h3>使用$.grep()筛选数组中的元素</h3>
+            <code>jQuery.grep(array, callback, [invert])</code>
+            <ul>
+                <li><strong>array</strong>:待过滤数组。</li>
+                <li><strong>callback</strong>:此函数将处理数组每个元素。第一个参数为当前元素，第二个参数而元素索引值。此函数应返回一个布尔值。另外，此函数可设置为一个字符串，当设置为字符串时，将视为“lambda-form”（缩写形式？），其中 a 代表数组元素，i 代表元素索引值。如“a > 0”代表“function(a){ return a > 0; }”。</li>
+                <li><strong>invert</strong>:为 false 或为设置，则函数返回数组中由过滤函数返回 true 的元素，当"invert" 为 true，则返回过滤函数中返回 false 的元素集。</li>
+            </ul>
+            <div class="tomy-sp1" id="trace1"></div>
+
+            <h3>使用$.map()变更数组中的元素或对象</h3>
+            <code>jQuery.map(arr|obj,callback)</code>
+            <ul>
+                <li><strong>arr|obj</strong>:待过滤数组|对象。</li>
+                <li><strong>callback</strong>:为每个数组元素调用，而且会给这个转换函数传递一个表示被转换的元素作为参数。
+                    函数可返回任何值。另外，此函数可设置为一个字符串，当设置为字符串时，将视为“lambda-form”（缩写形式？），
+                    其中 a 代表数组元素。如“a * a”代表“function(a){ return a * a; }”</li>
+            </ul>
+            <div class="tomy-sp1" id="trace2"></div>
+
+            <h3>使用$.inArray()搜索元素的位置</h3>
+            <p><code>jQuery.inArray(value,array,[fromIndex])</code>结果返回的是元素的引索值</p>
+            <p>功能与<code>indexOf()</code>类似</p>
+            <ul>
+                <li><strong>value</strong>:用于在数组中查找是否存在</li>
+                <li><strong>array</strong>:待处理数组。</li>
+                <li><strong>fromIndex</strong>:用来搜索数组起始位置，默认值为0。</li>
+            </ul>
+
+            <h3>使用$.trim()删除字符串左右两边的空格符</h3>
+            <p><code>StringjQuery.trim(str)</code></p>
+            <div class="tomy-sp1">
+                <code>$.trim(</code>"  hello, how are you?  "<code>)</code>;
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        div{
+            border:1px solid #000;
+        }
+        .div-relative{position:relative;color:#000;width:500px;height:400px}
+        .div-a{
+            position:relative;
+            /*left:30px;*/
+            /*top:30px;*/
+            /*z-index:100;*/
+            background:#F00;
+            width:200px;
+            height:100px;
+        }
+        /* div背景色为红色 */
+        .div-b{
+            margin-top: -60px;
+            position:relative;
+            /*left:50px;*/
+            /*top:60px;*/
+            /*z-index:80;*/
+            background:#FF0;
+            width:400px;
+            height:200px
+        }
+        /* 背景为黄色 */
+
+        .fstc:first-child{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<h1>h1. Bootstrap heading <small>Secondary text</small></h1>
+<br>
+You can use the mark tag to <mark>highlight</mark> text.
+<code>aaaa</code>
+<a href="http://www.bootcss.com">Bootstrap中文网</a>
+<input type="text" maxlength="10">
+
+<div class="div-relative">
+    <div class="div-a">我背景为红色</div>
+    <div class="div-b">我背景为黄色</div>
+</div>
+
+<div class="div-b">我背景为黄色</div>
+<div class="div-a">我背景为红色</div>
+
+<form>
+    <div>
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+    </div>
+</form>
+
+<div class="fstc">
+    <h1 class="fstc-in">哈哈哈哈哈</h1>
+    <h2>哦哦哦哦哦哦</h2>
+</div>
+
+<ul class="fstc">
+    <li>aaa</li>
+    <li>bbb</li>
+    <li>ccc</li>
+</ul>
+
+
+</body>
+</html>

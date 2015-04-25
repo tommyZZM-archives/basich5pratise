@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>下拉菜单哦</title>
+
+    <!-- Bootstrap style-->
+    <!--<link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="../../bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="js/tomy-btnmeun.js"></script>
+    <link href="../../../style_for_sample.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header">
+                下拉菜单哦<br>
+                <small>链接列表的可切换、有上下文的菜单。下拉菜单的 JavaScript 插件让它具有了交互性。</small>
+            </h1>
+            <div class="tomy-section">
+                <h2></h2>
+            </div>
+
+            <h2>Example</h2>
+            <p>将下拉菜单触发器和下拉菜单都包裹在 <code>.dropdown</code> 里，或者另一个声明了 <code>position: relative;</code> 的元素。然后加入组成菜单的 HTML 代码。</p>
+            <div class="tomy-sp1">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="spdropdown" data-toggle="dropdown">
+                        Fuck CSS Property
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="spdropdown">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">role</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">tabindex</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">aria-*</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" >data-toggle</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tomy-mk tomy-mk-yellow">
+                <h4>下啦菜单的交互</h4>
+                <p>需要通过JavaScript或者bootstrap内置的JavaScript插件实现</p>
+            </div>
+
+            <div class="tomy-mk tomy-mk-yellow">
+                <h4>进阶CSS</h4>
+                <p>在上述例子中应用了大量非标准的属性,如<code>role</code>、<code>tabindex</code>、<code>aria-***</code>等
+                    随着学习的深入，我们以后将会更了解这些属性。
+                </p>
+            </div>
+
+            <h4>对齐</h4>
+            <p>默认情况下，下拉菜单自动沿着父元素的上沿和左侧被定位为 100% 宽度。 为 <code>.dropdown-menu</code> 添加 <code>.dropdown-menu-right</code> 类可以让菜单右对齐。</p>
+            <div class="tomy-mk tomy-mk-yellow">
+                <h4>可能需要额外的定位May require additional positioning</h4>
+                <p>在正常的文档流中，通过 CSS 为下拉菜单进行定位。这就意味着下拉菜单可能会由于设置了 <code>overflow</code> 属性的父元素而被部分遮挡或超出视口（viewport）的显示范围。如果出现这种问题，请自行解决。</p>
+            </div>
+
+            <div class="tomy-mk tomy-mk-yellow">
+                <h4>不建议使用 <code>.pull-right</code></h4>
+                <p>从 v3.1.0 版本开始，我们不再建议对下来菜单使用 <code>.pull-right</code> 类。如需将菜单右对齐，请使用 <code>.dropdown-menu-right</code> 类。导航条中如需添加右对齐的导航（nav）组件，请使用 <code>.pull-right</code> 的 mixin 版本，可以自动对齐菜单。如需左对齐，请使用 <code>.dropdown-menu-left</code> 类。</p>
+            </div>
+
+            <div class="tomy-sp2">
+                <code class="html"><span>&lt;ul class=<code>"dropdown-menu dropdown-menu-right"</code> role=<code>"menu"</code> aria-labelledby=<code>"dLabel"</code>></span>
+                    <span>    ...</span>
+                    <span>&lt;/ul></span>
+                </code>
+            </div>
+
+            <h4>Title</h4>
+            <p>在任何下拉菜单中均可通过添加一列 <code>li</code> 来作为标题。需要设置为 <code>.dropdown-header</code></p>
+
+            <div class="tomy-sp1">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        Fuck CSS Property
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li role="presentation" class="dropdown-header">dropdown-header</li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">role</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">tabindex</a></li>
+                        <li role="presentation" class="dropdown-header">ari-***</li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">aria-labelledby</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">aria-hidden</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>Disabled item</h4>
+            <p>为下拉菜单中的 <code>&lt;li></code> 元素添加 <code>.disabled</code> 类，从而禁用相应的菜单项。</p>
+            <div class="tomy-sp1">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button">
+                        Fuck CSS Property
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="disabled"><a href="#">role(disabled)</a></li>
+                        <li><a href="#">tabindex</a></li>
+                        <li><a href="#">aria-labelledby</a></li>
+                        <li><a href="#">aria-hidden</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>异教徒 <code>.dropup</code></h4>
+            <div class="tomy-sp1">
+                <div class="btn-toolbar">
+                    <div class="btn-group dropup">
+                        <button type="button" class="btn btn-default">Panther</button>
+                        <button type="button" class="btn btn-default dropdown-toggle">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a>1</a></li>
+                            <li><a>2</a></li>
+                            <li><a>3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

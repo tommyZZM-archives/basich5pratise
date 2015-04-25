@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>快速控制页面元素</title>
+
+    <!-- Bootstrap style-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link href="../../../../style_for_sample.css" rel="stylesheet">
+
+    <script src="jquery.widgetcenter.js"></script>
+
+    <script>
+        $(function(){
+            $('#btn').click(function(){
+                $('#test').widgetcenter()
+            })
+        })
+    </script>
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header">快速控制页面元素</h1>
+            <h3>居中显示弹出框</h3>
+            <a class="btn btn-default" id="btn">弹出一个框框</a>
+            <div class="tomy-sp1" style="width: 300px;height: 300px;">
+                <div style="width:100px;height:100px;background-color: orangered;display: none;" id="test"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3动画-平移旋转缩放错切</title>
+    <style>
+        div.Frame{
+            width: 200px;
+            height: 200px;
+            border: dotted dodgerblue;
+            background:none;
+            float: left;
+            margin: 10px;
+        }
+        div.cssAnimate{
+            width: 200px;
+            height: 200px;
+            background:url(../../../res/HTML5Logo400x.png);
+            background-size: cover;
+        }
+        #rotate{
+            -moz-transition-duration:2.3s;	/*设置过渡持续的时间*/
+            -webkit-transition-duration:2.3s;	/*设置过渡持续的时间*/
+            -o-transition-duration:2.3s;	/*设置过渡持续的时间*/
+            -ms-transition-duration:2.3s;	/*设置过渡持续的时间*/
+        }
+        #rotate:hover{
+            -moz-transform:rotate(180deg);		/*Firefox下顺时针旋转30度*/
+            -webkit-transform:rotate(180deg);	/*Chrome下顺时针旋转30度*/
+            -o-transform:rotate(180deg);			/*Opera下顺时针旋转30度*/
+            -ms-transform:rotate(180deg);		/*IE下顺时针旋转30度*/
+        }
+        /**平移**/
+		#translate{
+			-webkit-transition-duration:2.3s;
+		}
+        #translate:hover{
+            -webkit-transform:translateX(200px);
+        }
+        /**缩放**/
+        #scale{
+            -webkit-transition-duration:2.3s;
+        }
+        #scale:hover{
+            -webkit-transform:scale(0.5,0.5);
+        }
+    </style>
+</head>
+<body>
+<div class="Frame">
+    <div class="cssAnimate" id="rotate"></div>
+</div>
+<div class="Frame" style="width: 400px;">
+    <div class="cssAnimate" id="translate"></div>
+</div>
+<div class="Frame">
+    <div class="cssAnimate" id="scale"></div>
+</div>
+</body>
+</html>

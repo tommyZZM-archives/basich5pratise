@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>小tommy的计算器</title>
+    <script>
+        function on_btnclick(s) {
+            var t1 = document.getElementById('txtNum_1').value;
+            var t2 = document.getElementById('txtNum_2').value;
+            var e = document.getElementById('art_1');
+            var opr = document.getElementById('operators');
+            switch (s) {
+                case 1:
+                    e.innerHTML = (t1 * 1) + (t2 * 1);
+                    <!--哟！还不能直接相加,js渣渣-->
+                    opr.innerHTML = "+"
+                    break;
+                case 2:
+                    e.innerHTML = t1 - t2;
+                    opr.innerHTML = "-"
+                    break;
+                case 3:
+                    e.innerHTML = t1 * t2;
+                    opr.innerHTML = "*"
+                    break;
+                case 4:
+                    if (t2 == 0) {
+                        e.innerHTML = "嗯？<br>分母能为0吗?"
+                    }
+                    else {
+                        e.innerHTML = t1 / t2;
+                    }
+                    opr.innerHTML = "÷";
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+请输入两个数字<br>
+<input id="txtNum_1" type="text" class="inputtxt" value="0"/>
+<strong id="operators">?</strong>
+<input id="txtNum_2" type="text" class="inputtxt" value="0"/>=
+<strong id="art_1"></strong>
+<br>
+<input id="go1" type="button" value="+" onClick="on_btnclick(1)">
+<input id="go2" type="button" value="-" onClick="on_btnclick(2)">
+<input id="go3" type="button" value="x" onClick="on_btnclick(3)">
+<input id="go4" type="button" value="÷" onClick="on_btnclick(4)">
+</body>
+</html>

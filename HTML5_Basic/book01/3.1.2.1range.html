@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function on_change() {
+            outevalue.value = range.value;
+            avalue.innerHTML = range.value.toString();
+        }
+    </script>
+</head>
+<body>
+<strong>滑块返还值示例</strong>
+<br>
+<input id="range" type="range" min="10" max="20" step="2" onchange="on_change()">
+
+<p>
+    <a>使用&#60output&#62标签.value</a>
+    <br>
+    <output id="outevalue"></output>
+</p>
+<p>
+    <a>使用&#60a&#62/&#60strong&#62等标签的.innerHTML</a>
+    <br>
+    <a id="avalue"></a>
+</p>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>盒模型实现弹性布局</title>
+    <style>
+        #container{
+            display: -webkit-box;
+            height: 900px;
+            /*-webkit-box-orient:vertical;*/
+        }
+        #left-sidebar{
+            -webkit-box-ordinal-group:3;
+            width: 280px;
+            padding: 20px;
+            background-color: orange;
+            box-sizing: border-box;
+        }
+        #contents{
+            -webkit-box-ordinal-group:2;
+            -webkit-box-flex:1;
+            padding: 20px;
+            background-color: lightgray;
+            -webkit-box-sizing: border-box;
+        }
+       #right-sidebar{
+           -webkit-box-ordinal-group:1;/**顺序**/
+           width: 200px;
+           padding: 20px;
+           background-color: dodgerblue;
+           -webkit-box-sizing: border-box;
+       }
+
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="left-sidebar"></div>
+    <div id="contents"></div>
+    <div id="right-sidebar"></div>
+</div>
+</body>
+</html>

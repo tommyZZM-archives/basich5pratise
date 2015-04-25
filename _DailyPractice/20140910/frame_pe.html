@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>frame_navfoot</title>
+
+    <!-- Bootstrap style-->
+    <link href="../../Bootstrap_Study/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">-->
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <style>
+        body{
+            background-color: #e6e6e6;
+
+            font-family: "Microsoft Yahei";
+        }
+
+        .container-bg{
+            background-color: #f5f5f5;
+            box-shadow:
+                -2px 3px 5px rgba(0, 0, 0, 0.09),
+                0 0 rgba(0, 0, 0, 0.09),
+                0 0 rgba(0, 0, 0, 0.09),
+                2px 3px 5px rgba(0, 0, 0, 0.09);
+        }
+
+        header{
+            height: 130px;
+        }
+
+        header nav{
+            float: right;
+            display: block;
+            margin-top: 10px;
+        }
+
+        header nav a{
+            display: block;
+            float: left;
+            margin: 0 13px;
+            padding: 6px 20px;
+            border-radius: 6px;
+
+            background-color: inherit;
+            color: #5c5c5c;
+            outline: none;
+
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 16px;
+
+            -webkit-transition-duration:0.3s;
+        }
+
+        header nav a:hover{
+            background-color: #18d4f5;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        header nav a.active ,
+        header nav a:active{
+            background-color: #17c9e7;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .logo-holder{
+            float: left;
+            width: auto;
+            margin-left: 13px;
+        }
+
+        .center{
+            float: none;
+            margin-left: auto;margin-right: auto;
+        }
+
+
+        /** foot **/
+        footer{
+            background-color: #2c2c2c;
+            color: #ffffff;
+            font-size: 12px;
+            padding: 13px 0;
+        }
+
+        footer a,footer a:hover{
+            font-weight: 600;
+            color: #ffffff;
+            cursor:pointer;
+        }
+
+        footer .friend-link{
+            width: inherit;
+            padding: 10px;
+            border-radius: 2px;
+            background-color: #505050;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 center">
+            <div class="container-bg">
+                <header class="top-header">
+                    <div class="container" style="width: inherit;padding-top: 38px">
+                        <div class="logo-holder">
+                            <a href="#" style="outline: none">
+                                <img title="pantomy enrichment" src="logo_test_nav.png">
+                            </a>
+                        </div>
+                        <nav>
+                            <a href="#home" title="Home" class="active">主页</a>
+                            <a href="#gallery" title="gallery">画廊</a>
+                            <a href="#blog" title="blog">博客</a>
+                            <a href="#about" title="about">关于</a>
+                        </nav>
+                    </div>
+                </header>
+
+                <!--content-->
+                <section>
+                    <p>content</p>
+                </section>
+
+                <!--foot-->
+                <footer>
+                    <div class="container" style="width: inherit">
+                        <p>©2014 pantommy.com. All rights reserved. 粤ICP备000000000号-0</p>
+                        <p>Powered by WordPress and Bootstrap</p>
+                        <div class="friend-link">
+                            友情链接:
+                            <a>haha</a>
+                        </div>
+                    </div>
+
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

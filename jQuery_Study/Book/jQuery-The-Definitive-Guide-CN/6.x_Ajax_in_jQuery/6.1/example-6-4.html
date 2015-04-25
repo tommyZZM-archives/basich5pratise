@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>getScript()</title>
+
+    <!-- Bootstrap style-->
+    <link href="../../../../../Bootstrap_Study/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../../jquery-2.1.1.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="../../../../../Bootstrap_Study/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+
+    <link href="../../../../../style_for_sample.css" rel="stylesheet">
+
+    <!--<script src="../../../../../Addon_Library/for-jQ/jq.color/jquery.color-2.1.2.js"></script>-->
+
+    <script type="text/javascript">
+
+        $.getScript("../../../../../Addon_Library/for-jQ/jQueryColor/jquery.color-2.1.2.js" ,
+                function(){
+                    $("#getscript").click(function(){
+                        $("#block").animate( { backgroundColor: '#1abc9c' }, 1000)
+                                .animate( { backgroundColor: '#3498db' }, 1000);
+                    });
+                }
+        )
+    </script>
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header"><code>getScript()</code></h1>
+
+            <div class="tomy-sp1">
+                <a class="btn btn-default dropdown-toggle" id="getscript">
+                    Let's GO!
+                </a>
+                <div id="block" style="margin:10px 0;width: 160px;height: 100px;display: block;background-color: lightgray;">
+
+                </div>
+                <p><small>调用jquery.colour插件 http://code.jquery.com/color/jquery.color-2.1.2.js</small></p>
+            </div>
+        </div>
+
+        <div class="tomy-mk tomy-mk-yellow">
+            <h4>异步加载 XML、JSON、JavaScript</h4>
+            <p>除了<code>getJSON()</code>、<code>getScript()</code>,jQuery还封装了<code>getXML()</code>方法用以异步加载XML格式的文件,使用方法与前两者类似</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

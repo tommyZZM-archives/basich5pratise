@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>按钮</title>
+
+    <!-- Bootstrap style-->
+    <link href="../../bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link href="../../../style_for_sample.css" rel="stylesheet">
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h1 class="page-header">按钮</h1>
+            <div class="tomy-section">
+                <h2>预定义样式</h2>
+                <p>使用下面列出的类可以创建一个带有bootstrap预定义样式的按钮</p>
+                <div class="tomy-sp1">
+                    <form>
+                        <button type="button" class="btn btn-default">default</button>
+                        <button type="button" class="btn btn-primary">primary</button>
+                        <button type="button" class="btn btn-success">success</button>
+                        <button type="button" class="btn btn-info">info</button>
+                        <button type="button" class="btn btn-warning">warning</button>
+                        <button type="button" class="btn btn-danger">danger</button>
+                        <button type="button" class="btn btn-link">link</button>
+
+                        <button type="button" class="btn navbar-btn">navbar-btn</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="tomy-section">
+                <h2>尺寸</h2>
+                <p>
+                    用 <code>.btn-lg</code> <code>.btn-sm</code> 或 <code>.btn-xs</code>
+                    设置按钮尺寸
+                </p>
+                <div class="tomy-sp1">
+                    <input type="button" class="btn btn-default btn-lg" value="Large button">
+                    <input type="button" class="btn btn-default" value="Default button">
+                    <input type="button" class="btn btn-default btn-sm" value="Small button">
+                    <input type="button" class="btn btn-default btn-xs" value="Extra smal button">
+                </div>
+            </div>
+
+            <div class="tomy-section">
+                把按钮设置为 <code>.btn-block</code> 类可以将其拉伸至父元素100%的宽度,按钮也变成块级(block)元素.
+
+                <div class="tomy-sp1">
+                    <div class="tomy-sp1" style="max-width: 390px;margin: 0 auto">
+                        <button class="btn btn-default btn-block">Block level button</button>
+                        <button class="btn btn-primary btn-block">Block level button</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tomy-section">
+                <h2>激活状态</h2>
+                <div class="tomy-sp1">
+                    <div class="tomy-mk tomy-mk-blue">
+                        <h4>按钮与链接 <code>&lt;a></code> 的激活状态</h4>
+                        按钮激活状态时,外观为按下去的赶脚,对于 <code>&lt;button></code> 元素,在CSS中
+                        是通过 <code>:active</code> 表示其激活状态.对于 <code>&lt;a></code> 元素
+                        是通过 <code>.active</code> 来表示的.
+                        在bootstrap中你可以将 <code>.active</code> 应用到 <code>&lt;button></code>上
+                        使其表现为激活,其应用需要通过编程来配合实现
+                    </div>
+                    <form>
+                        <fieldset>
+                            <button class="btn btn-primary btn-lg active" type="button">Active button</button>
+                            <input class="btn btn-default btn-lg active" type="button" value="Active input">
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div class="tomy-sp1">
+                    <div class="tomy-mk tomy-mk-blue">
+                        <h4><code>&lt;a></code> 元素 也能表现为button的形式</h4>
+                        <p>把 <code>&lt;a></code> 设置为 <code>.btn</code> 类,
+                            并套用 <code>.btn-*</code> 样式,能使其表现为一个按钮</p>
+                    </div>
+                    <a href="#" class="btn btn-default">&lt;a>Button</a>
+                </div>
+            </div>
+
+            <div class="tomy-section">
+                <h2>禁用状态</h2>
+                <p>为按钮设置 <code>disable</code> 属性,使其禁用</p>
+                <div class="tomy-sp1">
+                    <button type="button" class="btn btn-primary" disabled>Disabled</button>
+                    <input type="button" class="btn btn-default" value="Disabled" disabled>
+                </div>
+
+                <div class="tomy-mk tomy-mk-red">
+                    <h4>跨浏览器兼容性</h4>
+                    <blockquote style="font-size: 14px">
+                        如果为 <code>&lt;button></code> 元素添加 <code>disabled</code> 属性，
+                        Internet Explorer 9 及更低版本的浏览器将会把按钮中的文本绘制为灰色，
+                        并带有恶心的阴影，目前我们还没有解决办法。
+                    </blockquote>
+                </div>
+
+                <h3><code>&lt;a></code> 按钮的禁用</h3>
+                <p><code>&lt;a></code> 用 <code>.disable</code>类来禁用</p>
+                <div class="tomy-sp1">
+                    <a href="#" class="btn btn-default disabled">Disabled</a>
+                </div>
+
+                <div class="tomy-mk tomy-mk-red">
+                    <h4>跨浏览器兼容性</h4>
+                    <blockquote>
+                        上面提到的类只是通过设置 <code>ointer-events: none</code> 来禁止
+                        <code>&lt;a></code>元素作为链接的原始功能，但是，这一 CSS 属性并没有
+                        被标准化，并且 Opera 18 及更低版本的浏览器并没有完全支持这一属性，
+                        同样，Internet Explorer 11也不支持。
+                        因此，为了安全起见，建议通过 JavaScript 代码来禁止链接的原始功能。
+                    </blockquote>
+                </div>
+
+                <div class="tomy-mk tomy-mk-yellow">
+                    <h4>你知道吗?</h4>
+                    <p>
+                        虽然按钮类可以应用到 <code>&lt;a></code> 和 <code>&lt;button></code> 元素上，
+                        但是，导航和导航条只支持  <code>&lt;button></code> 元素。
+                    </p>
+                </div>
+
+                <div class="tomy-mk tomy-mk-blue">
+                    <h4>跨浏览器展现</h4>
+                    <p>我们总结的最佳实践是，<strong>强烈建议尽可能使用 <code>&lt;button&gt;</code> 元素</strong>来获得在各个浏览器上获得相匹配的绘制效果。</p>
+                    <p>另外，我们还发现了<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=697451">a bug in Firefox &lt;30 版本的浏览器上出现的一个 bug</a> ：阻止我们为基于 <code>&lt;input&gt;</code> 元素创建的按钮设置 <code>line-height</code> 属性，这就导致在 Firefox 浏览器上不能完全和其他按钮保持一致的高度。</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>

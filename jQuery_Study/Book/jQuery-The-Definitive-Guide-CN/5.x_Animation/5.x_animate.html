@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery动画</title>
+
+    <!-- Bootstrap style-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link href="../../../../style_for_sample.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header">jQuery动画</h1>
+            <h3>常用的动画效果</h3>
+            <ul>
+                <li>基本动画
+                    <ul>
+                        <li>
+                            <ul>显示/隐藏
+                                <li><code>show([s,[e],[fn]])</code> <small class="text-muted">//显示,当设置过度时间[e],默认从元素左上角作为基点</small></li>
+                                <li><code>hide([s,[e],[fn]])</code> <small class="text-muted">//隐藏</small></li>
+                                <li><code>toggle([s,[e],[fn]])</code> <small class="text-muted">//切换</small></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>滑动显示/隐藏
+                                <li><code>slideDown([s],[e],[fn])</code>
+                                    <small class="text-muted">//通过高度变化（向下增大）来动态地显示所有匹配的元素，在显示完成后可选地触发一个回调函数。</small></li>
+                                <li><code>slideUp([s,[e],[fn]])</code>
+                                    <small class="text-muted">//通过高度变化（向上减小）来动态地隐藏所有匹配的元素，在隐藏完成后可选地触发一个回调函数。</small></li>
+                                <li><code>slideToggle([s],[e],[fn])
+                                </code> <small class="text-muted">//通过高度变化来切换所有匹配元素的可见性，并在切换完成后可选地触发一个回调函数。</small></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>渐入渐出,透明度
+                                <li><code>fadeIn([s],[e],[fn])</code></li>
+                                <li><code>fadeOut([s],[e],[fn])</code></li>
+                                <li><code>fadeTo([[s],o,[e],[fn]])</code> <small class="text-muted">//到某一透明度</small></li>
+                                <li><code>fadeToggle([s,[e],[fn]])</code></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>自定义动画
+                    <ul>
+                        <li><code>animate(p,[s],[e],[fn])</code></li>
+                        <li><code>stop([c],[j])</code></li>
+                        <li><code>delay(d,[q])</code></li>
+                        <li><code>finish([queue])</code></li>
+                    </ul>
+                </li>
+
+                <li>设置
+                    <ul>
+                        <li><code>jQuery.fx.off</code></li>
+                        <li><code>jQuery.fx.interval</code></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="tomy-mk tomy-mk-blue">
+                <h4>详解<code>animate(p,[s],[e],[fn])</code></h4>
+                <p>
+                    参数<code>p</code>可能的CSS style样式值
+                    <a href="http://www.w3school.com.cn/jquery/effect_animate.asp"
+                       target="_blank">w3school jQuery 效果 - animate() 方法</a>
+                </p>
+                <ul>
+                    <li>backgroundPosition</li>
+                    <li>&nbsp;
+                        <ul>
+                            <li>borderWidth</li>
+                            <li>borderBottomWidth</li>
+                            <li>borderLeftWidth</li>
+                            <li>borderRightWidth</li>
+                            <li>borderTopWidth</li>
+                            <li>borderSpacing</li>
+                        </ul>
+                    </li>
+                    <li>&nbsp;
+                        <ul>
+                            <li>margin</li>
+                            <li>marginBottom</li>
+                            <li>marginLeft</li>
+                            <li>marginRight</li>
+                            <li>marginTop</li>
+                            <li>outlineWidth <small class="text-muted">//描边的大小</small> </li>
+                        </ul>
+                    </li>
+                    <li>&nbsp;
+                        <ul>
+                            <li>padding</li>
+                            <li>paddingBottom</li>
+                            <li>paddingLeft</li>
+                            <li>paddingRight</li>
+                            <li>paddingTop</li>
+                        </ul>
+                    </li>
+                    <li>&nbsp;
+                        <ul>
+                            <li>height</li>
+                            <li>width</li>
+                            <li>maxHeight</li>
+                            <li>maxWidth</li>
+                            <li>minHeight</li>
+                            <li>minWidth</li>
+                        </ul>
+                    </li>
+                    <li>&nbsp;
+                        <ul>
+                            <li>bottom</li>
+                            <li>left</li>
+                            <li>right</li>
+                            <li>top</li>
+                        </ul>
+                    </li>
+                    <li>&nbsp;
+                        <ul>
+                            <li>font</li>
+                            <li>fontSize</li>
+                            <li>letterSpacing</li>
+                            <li>wordSpacing</li>
+                            <li>lineHeight</li>
+                            <li>textIndent</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3基本盒类型</title>
+    <style type="text/css">
+        /**
+        css中使用display属性来定义盒类型，css中盒的分为block和inline类型
+        block类型默认占据一行，允许设置高度宽度
+        inline类型不会占据一行，禁用设置高度宽度
+        **/
+        div, span {
+            width: 300px;
+            height: 40px;
+            border: 1px solid cornflowerblue;
+        }
+        body>div{
+            display:inline;
+        }
+        body>span{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+<div>div元素1</div>
+<div>div元素2</div>
+<span>span01</span>
+<span>span02</span>
+</body>
+</html>

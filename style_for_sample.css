@@ -1,0 +1,134 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+    font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Microsoft Yahei,
+        Hiragino Sans GB,
+        WenQuanYi Micro Hei,
+        sans-serif;
+}
+
+div.tomy-section{
+
+}
+
+div.tomy-sp1{
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    -webkit-box-shadow:none;
+    box-shadow: none;
+    position: relative;
+    padding: 16px 16px 18px;
+    /*margin: 10px -15px -15px;*/
+    border: solid #ddd 1px;
+    border-radius: 6px;
+    /*background-color: #ffffff;*/
+    /*margin: 0 -15px 15px;*/
+}
+
+div.tomy-sp-general{
+    margin: 0;
+    padding: 16px;
+}
+
+div.tomy-sp1+div.tomy-sp2{
+    position: relative;
+    margin: -20px 0 10px 0;
+    padding: 10px 0;
+    border: solid #ddd 1px;
+    border-radius: 0 0 6px 6px;
+    background-color: #f7f7f9;
+}
+
+div.tomy-sp2{
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 10px;
+    -webkit-box-shadow:none;
+    box-shadow: none;
+    position: relative;
+    padding: 16px 16px 18px;
+    /*margin: 10px -15px -15px;*/
+    border: solid #ddd 1px;
+    background-color: #f7f7f9;
+    border-radius: 6px;
+}
+
+div.tomy-sp1>.btn-toolbar+.btn-toolbar{
+    margin-top: 10px;
+}
+
+div.tomy-mk{
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #e0e0e0;
+    border-left-width: 6px;
+    border-radius: 3px;
+}
+div.tomy-mk>blockquote{
+    font-size: 14px;
+}
+
+div.tomy-mk-red{
+    border-left-color: #d9534f;
+}
+div.tomy-mk-red>h4{
+    color: #d9534f;
+}
+
+div.tomy-mk-yellow:nth-child(odd){
+    border-left-color: #f0ad4e;
+}
+div.tomy-mk-yellow:nth-child(even){
+    border-left-color: #f0ad4e;
+}
+div.tomy-mk-yellow>h4{
+    color: #f0ad4e;
+}
+
+
+div.tomy-mk-blue{
+    border-left-color: #5bc0de;
+}
+div.tomy-mk-blue>h4{
+    color: #5bc0de;
+}
+
+
+div.tomy-center{
+    margin-left:auto;
+    margin-right: auto;
+    float: none;
+}
+
+code.html{
+    white-space: pre-line;
+    color:#333333;
+    background-color: transparent;
+    padding: 0 20px;
+    font-weight: normal;
+}
+code.html-sg-line{
+    white-space: normal;
+}
+code.html:first-child{
+    display: inline-block;
+}
+code.html>span{
+    color: #2f6f9f;
+    white-space: pre-wrap;
+}
+
+code.muted{
+    color: #d9534f;
+    background-color: inherit;
+}
+
+
+input,button,select,textarea{
+    outline: none;
+}

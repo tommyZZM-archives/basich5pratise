@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*----------------
+HTML 元素
+----------------*/
+body{
+    background: lightgray;
+    color: black;
+    font-size: 14px;
+}
+
+/*----------------
+LayerOut 布局
+----------------*/
+#wrapper{
+    width: 960px;
+    margin: 0 auto;
+}
+#header{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 10px;
+    background-color: whitesmoke;
+}
+#contenter{
+    width: 900px;
+    margin: 20px auto;
+    overflow: hidden;
+    background-color: whitesmoke;
+    position: relative;
+    padding: 26px;
+}
+#footer{
+    width: 900px;
+    margin: 20px auto;
+    overflow: hidden;
+    padding: 16px 20px;
+    background-color: whitesmoke;
+}

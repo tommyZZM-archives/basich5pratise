@@ -1,0 +1,115 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin: 0;padding: 0;}
+
+body{
+    text-align: center;
+    padding-top: 100px;
+}
+
+.breadcrumb{
+    display:inline-block;
+    box-shadow: 0 0 15px 1px rgba(0,0,0,0.35);
+    /***counter-reset: flag;**/
+    overflow: hidden;;
+    border-radius: 5px;
+}
+
+.breadcrumb a{
+    text-decoration: none;
+    outline: none;
+    display: block;
+    float: left;
+    font-size: 12px;
+    line-height: 36px;
+    color: #ffffff;
+    padding: 0 10px 0 60px;
+    background: #666666;
+    background: linear-gradient(#666,#333);
+    position: relative;
+}
+
+.breadcrumb a:first-child{
+    padding-left: 46px;
+    border-radius: 5px 0 0 5px;
+}
+
+.breadcrumb a:first-child:before{
+    left: 14px;
+}
+
+.breadcrumb a:last-child{
+    border-radius: 5px 0 0 5px;
+    padding-right: 20px;
+}
+
+/**hover active styles**/
+.breadcrumb a.active, .breadcrumb a:hover{
+    background: #333;
+    background: linear-gradient(#333,#000);
+}
+
+.breadcrumb a.active:after, .breadcrumb a:hover:after{
+    background: #333;
+    background: linear-gradient(135deg,#333,#000);
+}
+
+
+.breadcrumb a:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -18px;
+    width: 36px;
+    height: 36px;
+    /**border: 1px solid black;**/
+    -webkit-transform: scale(0.707)rotate(45deg);-moz-transform: scale(0.707)rotate(45deg);-ms-transform: scale(0.707)rotate(45deg);-o-transform: scale(0.707)rotate(45deg);transform: scale(0.707)rotate(45deg);
+    z-index: 1;
+    background: #666;
+    background: linear-gradient(135deg,#666,#333);
+    box-shadow:
+        2px -2px 0 2px rgba(0,0,0,0.4),
+        3px -3px 0 2px rgba(255,255,255,0.1);
+    /****/
+    border-radius: 0 5px 0 50px;
+    _border: 2px solid #ffffff;
+}
+
+.breadcrumb a:last-child:after{
+    content: none;
+}
+
+.breadcrumb a:before{
+    content:  counter(flag);
+    counter-increment: flag;
+    /**border: 1px solid black;**/
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    margin: 8px 0;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    background: #444;
+    background:linear-gradient(#444,#222);
+}
+
+
+/**扁平化风格的**/
+.flat a, .flat a:after{
+    background: #ffffff;
+    color: #000000;
+    transition: all 0.5s;
+}
+
+.flat a:before{
+    background: #ffffff;
+    box-shadow: 0 0 0 1px #CCC;
+}
+
+.flat a:hover, .flat a.active,
+.flat a:hover:after, .flat a.active:after{
+    background: #9EEB62;
+}

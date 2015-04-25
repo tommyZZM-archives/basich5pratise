@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>toggle()切换事件</title>
+
+    <!-- Bootstrap style-->
+    <!--<link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="../../../../Bootstrap_Study/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link href="../../../../style_for_sample.css" rel="stylesheet">
+
+    <script src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("img").attr("src","../src/IMG_1073.JPG");
+
+            $("#left").toggle(function(){
+                $("img").attr("src","../src/IMG_1073.JPG");
+            },function(){
+                $("img").attr("src","../src/IMG_1078.JPG");
+            },function(){
+                $("img").attr("src","../src/IMG_1092.JPG");
+            });
+
+            $("#right").toggle(function(){
+                $("img").attr("src","../src/IMG_1092.JPG");
+            },function(){
+                $("img").attr("src","../src/IMG_1078.JPG");
+            },function(){
+                $("img").attr("src","../src/IMG_1073.JPG");
+            });
+
+            function trace(string) {
+                $("#trace1").append("<p>"+string+"</p>")
+            }
+        })
+
+
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header tomy-center"><code>toggle()</code><del>方法切换事件</del></h1>
+            <div class="btn-group tomy-center">
+                <a class="btn btn-default" id="left"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="btn btn-default" id="right"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+            <div class="tomy-sp1" style="max-width: 390px">
+                <img class="img-responsive"/>
+                <div class="tomy-sp1" id="trace1"></div>
+            </div>
+
+            <div class="tomy-mk tomy-mk-red">
+                <h4>妈蛋</h4>
+                <p>jquery 1.9 中实现 toggle 切换函数被删除了，toggle()现在仅仅用来切换display显示/隐藏</p>
+                <p>可以通过引用 jquery-migrate-1.0.0.js 解决</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

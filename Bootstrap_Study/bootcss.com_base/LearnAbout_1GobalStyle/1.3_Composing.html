@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>内容与排版</title>
+
+    <!-- Bootstrap style-->
+    <link href="../../bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <!-- mystyle -->
+    <link href="../../../style_for_sample.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- h1 -->
+<div class="col-md-9" role="main"><!-- 中等屏幕(桌面显示器)栅格 -->
+    <h1>内容与排版</h1>
+    <h2>HTML 中的所有&lt;h1&gt;-&lt;h6&gt;标题标签均可使用。
+        <br>
+        还提供了同名的类(.h1-.h6)
+        <br>
+        <small>使用<code>&lt;small&gt;</code>标签或赋予 .small 类的元素来标记副标题</small>
+    </h2>
+
+    <!-- p -->
+    <h3>常用标签</h3>
+    <p>
+        Bootstrap 将全局 font-size 设置为 14px，line-height 设置为 1.428。这些属性直接赋予
+        <code>&lt;body&gt;</code>元素和所有段落元素。另外，<code>&lt;p&gt;</code>
+        （段落）元素还被设置了等于 1/2 行高（即 10px）的底部外边距（margin）。
+    </p>
+
+    <!-- .lead -->
+    <p class="lead">中心内容 通过添加<code>.lead</code>类让段落突出中心内容的显示</p>
+
+    <!-- mark -->
+    <p>使用<code>&lt;mark&gt;</code>来 <mark>高光标记</mark> 一段文本.</p>
+
+    <!-- del -->
+    <p>
+        <del>对于被删除的文本用<code>&lt;del&gt;</code>标签</del>
+    </p>
+
+
+    <!-- s -->
+    <p>
+        <s>对于无用文本使用<code>&lt;s&gt;</code>标签(使用方法同上)</s>
+    </p>
+
+    <!-- u -->
+    <p>
+        <u>为文本添加下划线,使用<code>&lt;u&gt;</code></u>
+    </p>
+
+    <!-- small -->
+    <p>
+        小号文本,使用<code>&lt;small&gt;</code>,
+        <mark>
+            <small>其文本字体被设置为父容器字体大小的85%</small>
+        </mark>,
+        标题中嵌套的副标题额外设置了<code>font-size</code>.
+        你还可以为行内元素赋予<code>.small</code>来代替<code>&lt;small&gt;</code>.
+    </p>
+
+    <!-- strong -->
+    <p>使用<code>&lt;strong&gt;</code>来用
+        <strong>粗体强调一段文本</strong>
+    </p>
+
+    <p>使用<code>&lt;em&gt;</code>来用
+        <em>斜体强调一段文本</em>
+    </p>
+
+    <p>
+        放心使用<code>&lt;b&gt;</code>和<code>&lt;i&gt;</code>标签来强调一段文本<br>
+        <b><code>&lt;b&gt;</code>用于高亮单词或短语</b> <br>
+        <i><code>&lt;i&gt;</code>用于发言\技术词汇等</i>
+    </p>
+
+    <h2>对齐</h2>
+    <p>通过文本对齐类，可以简单方便的将文字重新对齐。</p>
+    <div class="tomy-sp1">
+        <p class="text-left">.text-left</p>
+        <p class="text-center">.text-center</p>
+        <p class="text-right">.text-right</p>
+        <p class="text-justify">.text-justify</p>
+        <p class="text-nowrap">.text-nowrap</p>
+    </div>
+
+    <h2>改变大小写</h2>
+    <p>通过这几个类可以改变文本的大小写</p>
+    <div class="tomy-sp1">
+        <p class="text-lowercase">.test-lowercase</p>
+        <p class="text-uppercase">.text-uppercase</p>
+        <p class="text-capitalize">.text-capitalize</p>
+    </div>
+
+
+    <h2>缩略语</h2>
+    <p>
+        当鼠标悬停再缩写或者缩写词上时会显示完整内容,Bootstrap实现了对HTML的
+        <code>&lt;abbr&gt;</code>
+        元素的增强样式.缩略语元素带有<code>title</code>属性,鼠标悬停再上面时
+        会变成问号指针并且显示完整内容.
+        <h4>基本缩略语</h4>
+        如果想看完整内容可以把鼠标悬停在
+        <abbr title="但需要为<abbr>元素设置title属性" >缩略语</abbr>上.
+        <br>
+        <h4>首字母缩略语</h4>
+        为缩略语添加<code>.initallism</code>类,可以让font-size变得稍微小一些.
+        <div class="tomy-sp2">
+            <abbr title="HyperText Markup Language" class="initialism">HTML</abbr>
+            is the best thing sliiced bread;
+        </div>
+    </p>
+
+    <h2>超链接?</h2>
+    <div class="tomy-sp1">
+        <a href="http://www.bootcss.com">Bootstrap中文网</a>
+    </div>
+
+
+    <h2>引用</h2>
+    <h4>默认样式の引用</h4>
+    <p>
+        将任何HTML元素包裹在<code>&lt;blockquote&gt;</code>中即可表现为引用样式.
+        对于直接引用建议用<code>&lt;p&gt;</code>标签
+        <div class="tomy-sp1">
+        <blockquote>
+            <p>大家好!我是引用</p>
+        </blockquote>
+        </div>
+    </p>
+    <h4>扩展样式的引用</h4>
+    <h5>增加来源</h5>
+    <p>
+        用<code>&lt;footer&gt;</code>来增加来源.用<code>&lt;cite&gt;</code>来表示署名.
+        <div class="tomy-sp1">
+        <blockquote>
+            <p>大家好!我是引用</p>
+            <footer>来自tommy的HelloBootstrap learn from <cite>Bootstrap中文网</cite></footer>
+        </blockquote>
+        </div>
+    </p>
+    <h5>反向排列引用</h5>
+    <p>
+        添加<code>&lt;blockquote&gt;</code>的<code>.blockquote-reverse</code>类来实现反向
+        <div class="tomy-sp1">
+        <blockquote class="blockquote-reverse">
+            <p>大家好!我是引用!</p>
+        </blockquote>
+        </div>
+    </p>
+
+    <h2>列表</h2>
+    <h4>无序列表</h4>
+    <p>排列一些没有顺序的元素</p>
+    <div class="tomy-sp1">
+        <ul>
+            <li>body</li>
+            <li>small</li>
+            <li>hello
+            <ul>
+                <li>123123</li>
+                <li>1231231</li>
+            </ul>
+            </li>
+            <li>blockquote</li>
+        </ul>
+    </div>
+    <div class="tomy-sp2">
+        <code class="html">
+            <span>&lt;ul&gt;</span><br>
+            &nbsp;&nbsp;<span>&lt;li&gt;</span>...<span>&lt;li&gt;</span><br>
+            <span>&lt;ul&gt;</span>
+        </code>
+    </div>
+
+    <h4>有序列表</h4>
+    <div class="tomy-sp1">
+        <ol>
+            <li>Eget porttitor lorem</li>
+            <li>Nulla volutpat aliquam velit</li>
+            <li>Consectetur adipiscing elit</li>
+        </ol>
+    </div>
+    <div class="tomy-sp2">
+        <code class="html">
+            <span>&lt;ol&gt;</span><br>
+            &nbsp;&nbsp;<span>&lt;li&gt;</span>...<span>&lt;li&gt;</span><br>
+            <span>&lt;ol&gt;</span>
+        </code>
+    </div>
+
+    <h4>无样式列表</h4>
+    <div class="tomy-sp1">
+        <ul class="list-unstyled">
+            <li>body</li>
+            <li>small</li>
+            <li>hello
+                <ul>
+                    <li>123123</li>
+                    <li>1231231</li>
+                </ul>
+            </li>
+            <li>blockquote</li>
+        </ul>
+    </div>
+    <div class="tomy-sp2">
+        <code class="html">
+            <span>&lt;ul class=<code>"list-unstyled"</code>&gt;</span><br>
+            &nbsp;&nbsp;<span>&lt;li&gt;</span>...<span>&lt;li&gt;</span><br>
+            <span>&lt;ul&gt;</span>
+        </code>
+    </div>
+
+    <h4>描述列表</h4>
+    <p>带有描述短语的列表</p>
+    <div class="tomy-sp1">
+        <dl>
+            <dt>Description lists</dt>
+            <dd>A description list is perfect for defining terms.</dd>
+            <dt>Euismod</dt>
+            <dd>
+                Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.<br>
+                Donec id elit non mi porta gravida at eget metus.
+            </dd>
+        </dl>
+    </div>
+    <div class="tomy-sp2">
+        <code class="html">
+            <span>&lt;dl&gt;</span><br>
+            &nbsp;&nbsp;<span>&lt;dt&gt;</span>...<span>&lt;dt&gt;</span><br>
+            &nbsp;&nbsp;<span>&lt;dd&gt;</span>...<span>&lt;dd&gt;</span><br>
+            <span>&lt;ul&gt;</span>
+        </code>
+    </div>
+    <p>
+        <h5>水平排列的描述列表</h5>
+        添加<code>.dl-horizontal</code>可以让
+        <code>&lt;dl&gt;</code>内的短语及其描述排在一行<br>
+        *:只有容器足够宽是才会水平排列
+    </p>
+    <div class="tomy-sp1">
+        <dl class="dl-horizontal">
+            <dt>Description lists</dt>
+            <dd>A description list is perfect for defining terms.</dd>
+            <dt>Euismod</dt>
+            <dd>
+                Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.<br>
+                Donec id elit non mi porta gravida at eget metus.
+            </dd>
+        </dl>
+    </div>
+    <div class="tomy-sp2">
+        <code class="html">
+            <span>&lt;dl&nbsp;class=<code>"dl-horizontal"</code>&gt;</span><br>
+            &nbsp;&nbsp;<span>&lt;dt&gt;</span>...<span>&lt;dt&gt;</span><br>
+            &nbsp;&nbsp;<span>&lt;dd&gt;</span>...<span>&lt;dd&gt;</span><br>
+            <span>&lt;ul&gt;</span>
+        </code>
+    </div>
+
+    <h3 style="color: deepskyblue">自动截断</h3>
+    <div class="tomy-sp1">
+        <!--<h3 style="color: deepskyblue">自动截断</h3>-->
+        <p>
+            通过 <code>test-overflow</code> 属性,水平排列的描述表将会截断左侧不太长的短语.
+            在较窄的视口内,列表将会变成默认堆叠排列的布局方式.
+        </p>
+    </div>
+</div>
+
+<br>
+
+</body>
+</html>

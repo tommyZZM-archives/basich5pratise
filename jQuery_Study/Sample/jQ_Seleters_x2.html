@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQ联动下拉菜单</title>
+    <script type="text/javascript" src="../jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        //学习jQuery的第一件事是：如果你想要一个事件运行在你的页面上，你必须在$(document).ready()里调用这个事件
+
+        $(document).ready(function(){
+
+            $("#sel2").hide();
+
+            $("select#sel1").change(function(){
+
+                var _n_sel2 = $('<select id="sel2"><option>- 买买买！ -</option></select>');
+
+                $("#sel2").hide();
+
+                switch ($(this).val())
+                {
+                    case "第一人称射击":
+                        _n_sel2.append(appendArray(["CS:GO","Portal2","Crysis 2","Battle Filed 3"]))
+                        _n_sel2.show();
+                        break;
+                    case "即时战略":
+                        _n_sel2.append(appendArray(["Starcraft 2","Age of Empire 3"]))
+                        _n_sel2.show();
+                        break;
+                    case "策略模拟":
+                        _n_sel2.append(appendArray(["Civilization 5"]))
+                        _n_sel2.show();
+                        break;
+                    case "独立游戏":
+                        _n_sel2.append(appendArray(["Minecraft","Machinarium","Eufloria "]))
+                        _n_sel2.show();
+                        break;
+                    default :
+                        _n_sel2.hide()
+                        break;
+                }
+
+                $("#sel2").replaceWith(_n_sel2);
+            })
+        });
+
+        function appendArray(Array) {//字符串拼接
+            var se='';
+            for(var i=0;i<Array.length;i++)
+            {
+                se += '<option>' + Array[i]+ '</option>';
+            }
+            return se;
+        }
+
+
+    </script>
+</head>
+<body>
+<div style="
+margin-left:
+auto;margin-right:
+auto; margin-top: 260px;
+width: 230px;
+
+background-color: lightgrey;
+
+">
+    <select id="sel1">
+        <option>- 喜+1 -</option>
+        <option>第一人称射击</option>
+        <option>即时战略</option>
+        <option>策略模拟</option>
+        <option>独立游戏</option>
+    </select>
+
+    <select id="sel2">
+        <option>- 买买买！ -</option>
+    </select>
+</div>
+
+
+<!--<p id="trace">123</p>-->
+
+</body>
+</html>

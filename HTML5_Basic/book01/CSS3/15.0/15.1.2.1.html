@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>inline-block类型</title>
+    <style type="text/css">
+        /**
+        css中使用display属性来定义盒类型，css中盒的分为block和inline类型
+        block类型默认占据一行，允许设置高度宽度
+        inline类型不会占据一行，禁用设置高度宽度
+        **/
+        div.inlineblock{
+            display: inline-block;
+            border: 1px solid cornflowerblue;
+            width: 266px;
+        }
+        div.inline{
+            display: inline;
+            border: 1px solid darkorange;
+            width: 266px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="inlineblock">inline-block类型</div>
+    <div class="inlineblock">inline-block类型</div>
+</div>
+<div>
+    <div class="inline">inline类型</div>
+    <div class="inline">inline类型</div>
+</div>
+</body>
+</html>

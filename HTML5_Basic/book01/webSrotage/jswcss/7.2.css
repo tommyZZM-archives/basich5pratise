@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin: 0;padding: 0}
+body{
+    font-size: 16;
+    width: 740px;
+    margin: 0 auto;
+}
+
+.form_item{ min-height: 30px; margin-top: 5px;text-indent:0;}
+.form_item label{ display: block; line-height: 24px;}
+.form_item input[type="text"]{ width: 180px; height:24px; line-height: 24px;}
+.form_item textarea{ vertical-align: top;resize: none}
+.form_item  input[type="submit"],input[type="button"]{
+    width: 80px;
+    height:26px;
+    line-height: 24px;
+    border:1px solid #ff6600;
+    border-radius:6px;
+    background:#ff6600;
+    outline:none; color:#fff;
+    cursor: pointer;
+}
+
+p{ line-height: 24px; text-indent:2em;}
+table { width:100%; border:1px solid #e4e4e4; }
+table td{ border:1px solid #e4e4e4;}
+
+.msg{ height:24px; line-height: 24px;}
+
+a.warning{color: #ff491f;}
+a.normal{color: #0f0f0f;}
+a.green{color: #83e222;}
+/*.count_wrap{ border:1px solid #e4e4e4; text-indent: 0;}*/
+/*.count_wrap .count{ margin-right: 50px;}*/
+/*.count{ color: red; font-size: 18px;}*/

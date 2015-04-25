@@ -1,0 +1,79 @@
+@charset "utf-8";
+*{
+    font-family: "微软雅黑";
+}
+/* .queue-list */
+.queue-list{
+    border: dashed #cbcbcb 1px;
+    min-height: 300px;
+    width: 100%;
+    position:absolute;
+    padding: 0 0 0 10px;
+}
+
+.queue-list ul{
+    list-style: none;
+    margin: 0;padding: 0;
+}
+
+.queue-list li{
+    float: left;
+    position: relative;
+    border-radius: 6px;
+    width: 32%;
+    /*height: 350px;*/
+    background: #f0f0f0;
+    margin: 6px 10px 6px 0;
+    padding: 0;display: block;
+}
+
+.queue-list .img-tb{
+    border-radius: 6px 6px 0 0;
+    height: 200px;
+    overflow: hidden;
+}
+
+.queue-list .img-tb img{
+    /*position:relative;
+    top: -40%;left: -30%;
+    width: 160%;*/
+}
+
+
+.queue-list .img-info{
+    padding: 10px;
+    height: 120px;
+}
+
+.queue-list .img-info .title{
+    font-size: 16px;
+   padding-bottom: 6px;
+}
+
+.queue-list .img-info .intro{
+    font-size: 13px;
+    color: #9b9b9b;
+}
+
+.queue-list .img-upload{
+     position:relative;
+     margin: 0 10px 10px 10px;
+     bottom: 0
+}
+
+.queue-list .img-upload .progress{
+    margin: 0;
+}
+.queue-list .img-upload .img-meta{
+    height: 20px;
+    font-size: 12px;
+    padding-top: 6px;
+    color: #acacac;
+}
+.queue-list .img-upload .img-meta .file-size{
+    float: left;
+}
+
+.queue-list .img-upload .img-meta .statu{
+    float: right;
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>输入框组</title>
+
+    <!-- Bootstrap style-->
+    <!--<link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="../../bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="js/tomy-btnmeun.js"></script>
+    <link href="../../../style_for_sample.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header">
+                输入框组<br>
+                <small>通过在文本输入框前面、后面或是两边加上文字或按钮，可以实现对表单控件的扩展。
+                    为 <code>.input-group</code> 赋予 <code>.input-group-addon</code> 类和 <code>.input-group-btn</code> 类，可以给 <code>.form-control</code> 的前面
+                    或后面添加额外的元素。</small>
+            </h1>
+
+            <div class="tomy-mk tomy-mk-red">
+                <h4>跨浏览器の兼容性</h4>
+                <p>这里请避免使用 <code>&lt;select></code> 元素，因为 WebKit 浏览器不能完全绘制它的样式。</p>
+            </div>
+
+            <div class="tomy-mk tomy-mk-yellow">
+                <h4>输入框组中的工具提示和弹出框需要特别的设置</h4>
+                <p>为 <code>.input-group</code> 中所包含的元素应用工具提示（tooltip）或popover（弹出框）时，必须设置 <code>container: 'body'</code> 参数，为的是避免意外的副作用（例如，工具提示或弹出框被激活后，可能会让当前元素变得更宽或/和变得失去其圆角）。</p>
+            </div>
+
+            <div class="tomy-mk tomy-mk-yellow">
+                <h4>不要和某些组件混用</h4>
+                <p>为 <code>.input-group</code> 中所包含的元素应用工具提示（tooltip）或popover（弹出框）时，必须设置 <code>container: 'body'</code> 参数，为的是避免意外的副作用（例如，工具提示或弹出框被激活后，可能会让当前元素变得更宽或/和变得失去其圆角）。</p>
+            </div>
+
+            <h2>Example</h2>
+            <p>在输入框的任意一侧添加额外元素或按钮。你还可以在输入框的两侧同时添加额外元素。</p>
+            <p><small class="text-warning">不支持在输入框的单独一侧添加多个额外元素。(不知道什么意思)</small></p>
+            <p><small class="text-warning">不支持在单个输入框组中添加多个表单控件。(不知道什么意思)</small></p>
+
+            <div class="tomy-sp1">
+                <form>
+                    <div class="form-group">
+                        <label>glyphicon-star</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
+                            <input type="text" class="form-control" placeholder="Star">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>glyphicon-camera</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Camera">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-camera"></span></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>oh!!</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
+                            <input type="text" class="form-control" placeholder="Camera">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-camera"></span></span>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="tomy-mk tomy-mk-red">
+                    <h4>在输入框的单独一侧添加多个</h4>
+                    <form>
+                        <div class="form-group">
+                            <label>glyphicon-star</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-star"></span></span>
+                                <input type="text" class="form-control" placeholder="Star">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <h2>Size</h2>
+            <p>用 <code>,input-group-*</code> 设置该组尺寸, 类似 <code>,form-group-*</code> 设置子元素所有组的尺寸</p>
+            <div class="tomy-sp1">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon">&</span>
+                            <input type="text" class="form-control" placeholder="Star">
+                        </div>
+
+                        <div class="input-group input-group">
+                            <span class="input-group-addon">&</span>
+                            <input type="text" class="form-control" placeholder="Star">
+                        </div>
+
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon">&</span>
+                            <input type="text" class="form-control" placeholder="Star">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <h2>多种组合</h2>
+            <p>不解释</p>
+            <div class="tomy-sp1">
+                <form>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <input type="checkbox">
+                            </span>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <input type="radio">
+                            </span>
+                            <input class="form-control" type="text">
+                        </div>
+                    </div>
+                </form>
+                <div class="tomy-mk tomy-mk-red">
+                    <h4>并不是所有控件都适用</h4>
+                    <p>比较安全的是 <code>checkbox</code> <code>radio</code>.</p>
+                    <div class="tomy-sp1">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <input type="file">
+                            </span>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tomy-mk tomy-mk-yellow">
+                    <h4>对于按钮控件应该使用 <code>.input-group-btn</code> </h4>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-success">Go?</button>
+                            </span>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-danger">Come?</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-btn dropup">
+                                <button type="button" class="btn btn-primary dropdown-toggle">
+                                    DropDown
+                                    <span class="caret"></span>
+                                </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                    </ul>
+                            </span>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-btn dropup">
+                                <button type="button" class="btn btn-default">Go?</button>
+                                <button type="button" class="btn btn-default dropdown-toggle">
+                                    DropDown
+                                    <span class="caret"></span>
+                                </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">1</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                    </ul>
+                                <button type="button" class="btn btn-default">Go?</button>
+                            </span>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

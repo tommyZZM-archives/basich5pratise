@@ -1,0 +1,20 @@
+{"album-content": {
+    "album-thumb":0,
+    "queue-list": [
+        {
+            "link":"",
+            "title":"",
+            "description":"",
+            "thumb":"",
+            "meta":{
+                "file-name":"",
+                "file-type":"",
+                "file-size":"",
+                "dimensions":"",
+                "upload-time":""
+            }
+        },{
+            //123
+        }
+    ]
+}}

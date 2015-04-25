@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>tommy的CSS3登录页面</title>
+    <style type="text/css">
+        td{
+            font-size: 9pt;
+            color: #0f0f0f;
+        }
+        .btn_grey{/*类选择器*/
+            font-family: "微软雅黑";font-size: 9pt;color: #ffffff;
+            background-color: #ff6600;
+            border-top: 1px solid #ffffff;
+            border-right: 1px solid #666666;
+            border-bottom: 1px solid #666666;
+            border-left: 1px solid #ffffff;
+        }
+        input{/*标签选择器*/
+            font-family: "微软雅黑";
+            font-size: 9pt;
+            color: #0f0f0f;
+            border: 1px solid #999999;
+        }
+        body{
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+<form id="from1" name="post">
+    <p>使用CSS样式设置登录页面</p>
+    <table border="0">
+        <tr>
+            <td>用户名：</td>
+            <td>
+                <label for="textfiled2"></label>
+                <input type="text" name="textfield" id="textfiled2">
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right">密码：</td>
+            <td style="text-align: left">
+                <label for="textfiled3"></label>
+                <input type="text" name="textfiled2" id="textfiled3">
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right">&nbsp;</td>
+            <td style="text-align: left">
+                <input type="submit" name="button" id="button" class="btn_grey" value="提交">
+                <input type="reset" name="button2" id="button2" class="btn_grey" value="重置">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

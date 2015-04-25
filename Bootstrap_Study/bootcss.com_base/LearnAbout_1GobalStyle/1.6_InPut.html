@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>表单与输入控件</title>
+
+    <!-- Bootstrap style-->
+    <link href="../../bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link href="../../../style_for_sample.css" rel="stylesheet">
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-xl-9 col-md-9">
+            <h1>表单与输入控件</h1>
+            <h2>实例</h2>
+            <p>
+                单独的表单控件会被自动赋予一些全局样式。所有设置了
+                <code>.form-control</code> 类的 <code>&lt;input></code>、
+                <code>&lt;textarea></code> 和 <code>&lt;select></code> 元素
+                都将被默认设置宽度属性为<code>width: 100%;</code>。
+                将 <code>label</code> 元素和前面提到的控件包裹在 <code>.form-group</code>
+                中可以获得最好的排列。
+            </p>
+
+            <div class="tomy-mk tomy-mk-blue">
+                <h4>代码格式</h4>
+                <p>
+                    <code>&lt;label></code>则应该用<code>&lt;form></code>包裹.
+                    <br>按照标准的格式能让表单的视觉效果达到最好的排列,也能提高代码的可读性
+                </p>
+            </div>
+
+            <div class="tomy-sp1">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputFile">File input</label>
+                        <input type="file" id="exampleInputFile">
+                    </div>
+
+                    <div class="form-group">
+                        <label><input type="checkbox">Check me!!</label>
+                    </div>
+                </form>
+            </div>
+            <div class="tomy-sp2">
+                <code class="html"><span>&lt;form></span>
+                    <span>  &lt;div class=<code>"form-group"</code>> </span>
+                    <span>    &lt;label>...&lt;/label></span>
+                    <span>    &lt;input class="<code>form-control</code>" type="..." ...></span>
+                    <span>  &lt;/div></span>
+                    <span>&lt;/form></span>
+                </code>
+            </div>
+
+            <div class="tomy-sp1">
+                <form>
+                    <div class="form-group">
+                        <p><code>&lt;button></code>应用<code>.btn</code>和<code>.btn-default</code>样式</p>
+                        <button type="submit" class="btn btn-default">&lt;button> btn btn-default</button>
+                    </div>
+
+                    <div class="form-group">
+                        <p><code>&lt;input type="button"></code>应用样式</p>
+                        <input type="button" class="btn btn-default" value="<input> btn btn-default">
+                    </div>
+                </form>
+            </div>
+            <div class="tomy-sp2">
+                <code class="html"><span>&lt;input type="button" class="btn btn-default" value=".."></span>
+                </code>
+            </div>
+
+            <div class="tomy-mk tomy-mk-red">
+                <h4>不要将表单组和输入框组混合使用</h4>
+                <p>不要将表单组直接和输入框组混合使用。建议将输入框组嵌套到表单组中使用。</p>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <h2>内联表单</h2>
+            <p>
+                为 <code>&lt;form></code> 元素添加 <code>.form-inline</code> 类可使其内容左对齐并且表现为 inline-block 级别的控件。
+                只适用于视口（viewport）至少在 768px 宽度时（视口宽度再小的话就会使表单折叠）。
+            </p>
+            <div class="tomy-mk tomy-mk-red">
+                <h4>需要手动设置宽度</h4>
+                <p>
+                    在 Bootstrap 中，输入框和单选/多选框控件默认被设置为 <code>width: 100%;</code> 宽度。
+                    在内联表单，我们将这些元素的宽度设置为 <code>width: auto;</code>，因此，多个控件可以排列在同一行。
+                    根据你的布局需求，可能需要一些额外的定制化组件。
+                </p>
+            </div>
+            <div class="tomy-mk tomy-mk-yellow">
+                <h4>一定要添加 <code>label</code> 标签</h4>
+                <p>
+                    如果你没有为每个输入控件设置 <code>label</code> 标签，屏幕阅读器将无法正确识别。
+                    对于这些内联表单，你可以通过为 <code>label</code> 设置 <code>.sr-only</code> 类将其隐藏。
+                </p>
+            </div>
+
+            <div class="tomy-sp1">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">@</div>
+                            <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Enter email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="email" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                    </div>
+
+                    <div class="form-group">
+                        <label><input type="checkbox">Check me!!</label>
+                    </div>
+                </form>
+            </div>
+            <div class="tomy-sp2">
+                <code class="html"><span>&lt;form class=<code>"form-inline"</code>> </span>
+                    <span>   ...</span>
+                    <span>&lt;/form></span>
+                </code>
+            </div>
+
+            <h3>表单控件组</h3>
+            <p>包裹在<code>.input-group</code>内的
+                <code>&lt;div class="input-group"></code>会自动适应贴合组内的表单<br>
+                *!:<code>&lt;label></code>不能放在<code>.input-group</code>内
+            </p>
+            <div class="tomy-sp1">
+                <form>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon">Addon@</div>
+                            <input type="email" class="form-control" placeholder="Enter email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter email">
+                            <div class="input-group-addon">Addon@</div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="tomy-sp2">
+                <code class="html"><span>&lt;div class="input-group"></span>
+                    <span>   &lt;div class="input-group-addon">Addon@&lt;/div></span>
+                    <span>   &lt;input type="email" class="form-control" placeholder="Enter email"></span>
+                    <span>&lt;/div></span>
+                </code>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <h2>水平排列的表单</h2>
+            <p>
+                通过为表单添加 <code>.form-horizontal</code> 类，并联合使用 Bootstrap 预置的栅格类，
+                可以将 <code>label</code> 标签和控件组水平并排布局。这样做将改变 <code>.form-group</code> 的行为，
+                使其表现为栅格系统中的行（row），因此就无需再额外添加 <code>.row</code> 了。
+            </p>
+
+            <div class="tomy-sp1">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tomy-sp2">
+                <code class="html"><span>&lt;form class="form-horizontal"></span>
+                    <span>   ...</span>
+                    <span>&lt;/form></span>
+                </code>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <h2>被支持的控件</h2>
+            <p>表单布局实例中展示了其所支持的标准表单控件。</p>
+
+            <h3>输入框</h3>
+            <p>
+                包括大部分表单控件、文本输入域控件，还支持所有 HTML5 类型的输入控件：<br>
+                <code>text</code>、<code>password</code>、<code>datetime</code>、
+                <code>datetime-local</code>、<code>date</code>、<code>month</code>、
+                <code>time</code>、<code>week</code>、<code>number</code>、<code>email</code>、
+                <code>url</code>、<code>search</code>、<code>tel</code> 和 <code>color</code>。
+            </p>
+
+            <div class="tomy-mk tomy-mk-red">
+                <h4>必须添加<code>.form-control</code>类</h4>
+                <p>只有正确设置了 <code>class="form-control"</code> 属性的输入控件才能被赋予正确的样式。</p>
+            </div>
+
+            <div class="tomy-sp1">
+                <input type="text" class="form-control" placeholder="Input here!">
+            </div>
+            <div class="tomy-sp2">
+                <code class="html html-sg-line">
+                    <span>&lt;input type="text" <code>class="form-control"</code> placeholder="Input here!"></span>
+                </code>
+            </div>
+
+            <div class="tomy-mk tomy-mk-blue">
+                <h4>输入控件组</h4>
+                <p>如需在文本输入域 <code>&lt;input&gt;</code> 前面或后面添加文本内容或按钮控件，请参考
+                    <a href="http://v3.bootcss.com/components/#input-groups">输入控件组</a>。</p>
+            </div>
+
+
+            <h3>文本域</h3>
+            <p>支持多行文本的表单控件。可根据需要改变 <code>rows</code> 属性。</p>
+            <div class="tomy-sp1">
+                <form role="form">
+                    <div class="form-group">
+                        <label>Example</label>
+                        <textarea class="form-control" rows="3" placeholder="尽量设置placeholder属性"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="tomy-sp2">
+                <code class="html html-sg-line">
+                    <span>&lt;textarea class="form-control" <code>rows="3"</code>>&lt;/textarea></span>
+                </code>
+            </div>
+
+            <h3>多选和单选框</h3>
+            <p>
+                多选框（checkbox）用于选择列表中的一个或多个选项，而单选框（radio）用于从多个选项中只选择一个。
+                设置了 <code>disabled</code> 属性的单选或多选框都能被赋予合适的样式。
+                对于和多选或单选框联合使用的 <code>&lt;label></code> 标签，
+                如果也希望将悬停于上方的鼠标设置为“禁止点击”的样式，请将 <code>.disabled</code>
+                类赋予 <code>.radio-inline .checkbox .checkbox-inline </code>
+                或 <code>&lt;fieldset></code>。
+            </p>
+            <div class="tomy-mk tomy-mk-yellow">
+                <p>
+                    就是说如果也希望将悬停于上方的鼠标设置为“禁止点击”的样式，
+                    请将 <code>.checkbox</code>和<code>.disabled</code>
+                    类赋予<code>&lt;input></code>的父容器中,如<code>&lt;div class="checkbox disabled"></code>;
+                </p>
+            </div>
+            <div class="tomy-mk tomy-mk-yellow">
+                <p>容器设置相应的类,如<code>&lt;div class="checkbox"></code>或
+                    <code>&lt;div class="radio"></code>
+                    可以让子元素label按照合适的样式进行排列.</p>
+            </div>
+            <div class=""></div>
+            <div class="tomy-sp1">
+                <div class="checkbox">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox">
+                            Option one is this and that—be sure to include why it's great
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox">
+                            Option two is enable
+                        </label>
+                    </div>
+                    <div class="checkbox disabled">
+                        <label>
+                            <input type="checkbox" disabled>
+                            Option three is disabled
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="tomy-sp2">
+                <code class="html"><span>&lt;div class="checkbox"></span>
+                    <span>    &lt;div class="<code>checkbox disabled</code>"></span>
+                    <span>        &lt;label></span>
+                    <span>            &lt;input type="checkbox"></span>
+                    <span>            ...</span>
+                    <span>        &lt;/label></span>
+                    <span>    &lt;/div></span>
+                    <span>&lt;/div></span>
+                </code>
+            </div>
+
+            <h4>单选框</h4>
+
+            <div class="tomy-sp1">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="opr1" checked>
+                        Option one is this and that be sure to include why it's great
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="opr1">
+                        Option two can be something else and selecting it will deselect option one
+                    </label>
+                </div>
+                <div class="radio disabled">
+                    <label>
+                        <input type="radio" name="opr1" disabled>
+                        Option three is disabled
+                    </label>
+                </div>
+            </div>
+            <div class="tomy-sp2">
+                <code class="html"><span>&lt;div <code>class="radio"</code>></span>
+                    <span>    &lt;label></span>
+                    <span>        &lt;input type="checkbox" name="..."></span>
+                    <span>        ...</span>
+                    <span>    &lt;/label></span>
+                    <span>&lt;/div></span>
+                </code>
+            </div>
+
+            <h4>内联单选框和多选框</h4>
+            <p>
+                通过将 .checkbox-inline 或 .radio-inline 类应用到一系列的多选框（checkbox）或单选框（radio）
+                控件上，可以使这些控件排列在一行。
+            </p>
+            <div class="tomy-sp1">
+                <form>
+                    <label class="checkbox-inline">
+                        <input type="checkbox">1
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox">2
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox">3
+                    </label>
+                </form>
+
+                <form>
+                    <label class="radio-inline">
+                        <input type="radio" name="opr2">1
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="opr2">2
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="opr2">3
+                    </label>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="col-md-9">
+            <h3>下啦列表</h3>
+            <p>使用默认选项或添加 <code>multiple</code> 属性可以同时显示多个选项。</p>
+            <p>在<code>&lt;select></code>设置为<code>.from-control</code>类使下啦列表应用Bootstrap样式</p>
+            <div class="tomy-sp1">
+                <form>
+                    <h5>单选列表</h5>
+                    <select class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                    <br>
+                    <h5>复选列表(按住shift)</h5>
+                    <select multiple class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </form>
+            </div>
+            <div class="tomy-sp2">
+                <code class="html"><span>&lt;select class=<code>"form-control"</code>&gt;</span>
+                    <span class="nt">    &lt;option&gt;</span>1<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">    &lt;option&gt;</span>2<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">    &lt;option&gt;</span>3<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">    &lt;option&gt;</span>4<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">    &lt;option&gt;</span>5<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;/select&gt;</span>
+
+                    <span>&lt;select <code>multiple</code> class=<code>"form-control"</code>&gt;</span>
+                    <span class="nt">    &lt;option&gt;</span>1<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">    &lt;option&gt;</span>2<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">    &lt;option&gt;</span>3<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">    &lt;option&gt;</span>4<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">    &lt;option&gt;</span>5<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;/select&gt;</span>
+                </code>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <h3>静态控件(水平排列)</h3>
+            <p>
+                在水平布局的表单中，如果需要将一行纯文本和 <code>label</code> 元素放置于同一行，
+                为 <code>&lt;p></code> 元素添加 <code>.form-control-static</code> 类即可。
+            </p>
+            <div class="tomy-sp1">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">tommy@example.hahaha</p>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">
+                            Pssword
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" placeholder="password">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="tomy-sp2">
+                <code class="html"><span>&lt;form class="form-horizontal"></span>
+                    <span>    &lt;div class="form-group"></span>
+                    <span>        &lt;label class="col-sm-2 control-label"></span>
+                    <span>        &lt;class="col-sm-10"></span>
+                    <span>            &lt;p class="<code>form-control-static</code>">tommy@example.hahaha&lt;/p></span>
+                    <span>        &lt;/div></span>
+                    <span>    &lt;/div></span>
+                    <span>    &lt;div class="<code>form-group</code>"></span>
+                    <span>        &lt;label class="<code>col-sm-2</code> <code>control-label</code>"></span>
+                    <span>        &lt;class="<code>col-sm-10</code>"></span>
+                    <span>            &lt;input type="..." ...></span>
+                    <span>        &lt;/div></span>
+                    <span>    &lt;/div></span>
+                    <span>&lt;/form></span>
+                </code>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <h3>输入框焦点</h3>
+            <p>
+                Bootstrap将某些表单控件的默认 <code>outline</code> 样式移除，
+                然后对 <code>:focus</code> 状态赋予 <code>box-shadow</code> 属性。
+            </p>
+
+            <div class="tomy-sp1">
+                <form>
+                    <div class="form-group">
+                        <label>Example</label>
+                        <input class="form-control" type="text" value="i'm value" placeholder="i'm placeholder!">
+                    </div>
+                </form>
+            </div>
+
+            <div class="tomy-mk tomy-mk-yellow">
+                <p>
+                    以文本表单为例,<code>&lt;input></code>的 <code>vlaue</code>属性设置原有的值,鼠标点击后焦点会在值的尾部,
+                    而 <code>placeholder</code> 设置提示的字段,
+                    对于提示字段,鼠标点击后焦点在头部,输入值之后提示字段将会被覆盖.用户不能编辑
+                </p>
+            </div>
+
+        </div>
+
+        <div class="col-md-9">
+            <h3>被禁用&只读输入框</h3>
+            <p>为输入框设置 <code>disabled</code> 可以禁用输入框,设置 <code>readonly</code> 可以禁止用户输入.
+                两者的效果非常相近,不同的是 <code>readonly</code> 能获取鼠标焦点,而 <code>disabled</code>
+                不能.
+            </p>
+            <div class="tomy-sp1">
+                <form>
+                    <div class="form-group">
+                        <label>Disabled</label>
+                        <input class="form-control" type="text" placeholder="Disabled input here..." disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Read only</label>
+                        <input class="form-control" type="text" placeholder="Read only!But Activable" readonly>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tomy-mk tomy-mk-yellow">
+                <p>如果设置了文本框的<code>value</code>值,
+                    <code>value</code>将优先于<code>placeholder</code>显示,即使设置为
+                    <code>disabled</code>或<code>readonly</code>
+                </p>
+            </div>
+
+            <h3>利用 <code>&lt;fieldset></code> 禁用一组控件</h3>
+            <p>
+                为 <code>&lt;fieldset></code>
+                设置 <code>disabled</code> 属性,可以禁用 <code>&lt;fieldset></code>
+                中包含的所有控件。
+            </p>
+
+            <div class="tomy-mk tomy-mk-yellow">
+                <h4><code>&lt;a></code> 标签的链接功能不受影响</h4>
+                <blockquote style="font-size: 14px">
+                    我们试图通过设置 <code>pointer-events: none</code> 来禁用 <code>&lt;a class="btn btn-*"></code>
+                    按钮的链接功能，但是这个 CSS 属性尚未标准化，目前也没有被所有浏览器支持，
+                    包括 Opera 18 或 Internet Explorer 11 及更低版本。建议用户自己通过
+                    JavaScript 代码禁用链接功能。
+                </blockquote>
+            </div>
+
+            <div class="tomy-mk tomy-mk-red">
+                <h4>跨浏览器兼容性</h4>
+                <p>虽然 Bootstrap 会将这些样式应用到所有浏览器上，
+                    Internet Explorer 9 及以下浏览器中的 <code>&lt;fieldset&gt;</code>
+                    元素并不支持 <code>disabled</code> 属性。因此建议在这些浏览器上通过
+                    JavaScript 代码来禁用 <code>&lt;fieldset&gt;</code>。</p>
+            </div>
+
+            <div class="tomy-sp1">
+                <form>
+                    <fieldset disabled>
+                        <div class="form-group">
+                            <label>Input</label>
+                            <input class="form-control" type="text" placeholder="i'm <input>">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Select</label>
+                            <select class="form-control">
+                                <option>i'm <code>&lt;select>&&lt;option></code></option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>TextArea</label>
+                            <textarea class="form-control" rows="3" placeholder="i'm <textarea>"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary">i'm &lt;button></button></button>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Range</label>
+                            <input class="form-control" type="range">
+                        </div>
+                    </fieldset>
+                    <p>....</p>
+                </form>
+            </div>
+            <div class="tomy-sp2">
+                <code class="html"><span>&lt;form></span>
+                    <span>    &lt;fieldset <code>disabled</code>></span>
+                    <span>    ...(div:form-groups)</span>
+                    <span>    &lt;/fieldset></span>
+                    <span>&lt;/form></span>
+                </code>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <h3>校验状态</h3>
+            <p>Bootstrap 对表单控件的校验状态，如 error、warning 和 success 状态，
+                都定义了样式。使用时，添加 <code>.has-warning</code>、<code>.has-error</code>
+                或 <code>.has-success</code> 类到这些控件的父元素即可。
+                任何包含在此元素之内的 <code>.control-label</code>、<code>.form-control</code>
+                和 <code>.help-block</code> 元素都将接受这些校验状态的样式。</p>
+
+            <div class="tomy-sp1">
+                <form>
+                    <div class="form-group has-success">
+                        <label class="control-label" for="inputSuccess1">Input with success</label>
+                        <input type="text" class="form-control" placeholder="siccess" id="inputSuccess1">
+                    </div>
+                    <div class="form-group has-warning">
+                        <label class="control-label" for="inputWarning1">Input with warning</label>
+                        <input type="text" class="form-control" placeholder="warning" id="inputWarning1">
+                    </div>
+                    <div class="form-group has-error">
+                        <label class="control-label" for="inputError1">Input with error</label>
+                        <input type="text" class="form-control" placeholder="error" id="inputError1">
+                    </div>
+                    <div class="has-success">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="checkboxSuccess" value="option1">
+                                Checkbox with success
+                            </label>
+                        </div>
+                    </div>
+                    <div class="has-warning">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="checkboxWarning" value="option1">
+                                Checkbox with warning
+                            </label>
+                        </div>
+                    </div>
+                    <div class="has-error">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="checkboxError" value="option1">
+                                Checkbox with error
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <h3>添加校验状态的图标</h3>
+            <p>
+                你还可以针对校验状态为输入框添加额外的图标。
+                只需设置相应的 <code>.has-feedback</code> 类并添加正确的图标即可。
+            </p>
+            <div class="tomy-sp1">
+                <form>
+                    <div class="form-group has-success has-feedback">
+                        <label>Input with Success!</label>
+                        <input class="form-control" type="text" placeholder=" ">
+                        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tomy-mk tomy-mk-blue">
+                <p>水平表单(<code>.form-horizontal</code>)和内联表单(<code>.form-inline</code>)
+                    设置校验状态的方法同上.
+                </p>
+            </div>
+
+            <div class="tomy-mk tomy-mk-yellow">
+                <h4><code>label</code> 和图标的关系</h4>
+                <blockquote style="font-size: 14px">
+                    对于不带有 <code>label</code> 标签的输入框以及右侧带有附加组件的输入框组，
+                    需要手动为其图标定位。为了让所有用户都能访问你的网站，我们强烈建议为所有输入框
+                    添加 <code>label</code> 标签。如果你不希望将 <code>label</code> 标签展示
+                    出来，可以通过添加 <code>sr-only</code> 类来实现。
+                    如果的确不能添加 <code>label</code> 标签，请调整图标的 <code>top</code> 值。
+                    对于输入框组，请根据你的实际情况调整 <code>right</code> 值。
+                </blockquote>
+
+                <p>
+                    通过为 <code>label</code> 元素添加 <code>.sr-only</code> 类，
+                    可以让表单控件的 label 元素不可见。在这种情况下，Bootstrap 将自动调整图标的位置。
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <h2>控件的尺寸</h2>
+            <p>
+                通过 <code>.input-lg</code> 类似的类可以为控件设置<code>高度</code>;
+                通过用栅格系统中的列( <code>row</code> )包裹输入框或者任何父元素,
+                再用 <code>.col-*-*</code> 类似的类为控件设置<code>宽度</code>
+            </p>
+
+            <div class="tomy-sp1">
+                <form>
+                    <div class="form-group">
+                        <label class="sr-only"></label>
+                        <input class="form-control input-lg" placeholder=".input-lg">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="sr-only"></label>
+                        <input class="form-control" placeholder="Default">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="sr-only"></label>
+                        <input class="form-control input-sm" placeholder=".input-sm">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="sr-only"></label>
+                        <input class="form-control" placeholder=".col-lg-6">
+                    </div>
+                </form>
+            </div>
+
+            <h3>水平表单的控件尺寸</h3>
+            <p>
+                通过添加 <code>.form-group-lg</code> 或 <code>.form-group-sm</code>类,
+                为 <code>.form-horizontal</code> 中的 <code>form-group</code>
+                所包裹的控件快速设置尺寸.
+            </p>
+
+            <div class="tomy-sp1">
+                <form class="form-horizontal">
+                    <div class="form-group form-group-lg">
+                        <label class="col-sm-2 control-label">Large Label</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" placeholder="Large group!">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Deafult Label</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" placeholder="Deafault group!">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-2 control-label">Small Label</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" placeholder="Small group!">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <h3>设置宽度</h3>
+            <div class="tomy-sp1">
+                <form class="row">
+                    <div class="form-group col-xs-2">
+                        <input type="text" class="form-control" placeholder=".col-xs-2">
+                    </div>
+                    <div class="form-group col-xs-3">
+                        <input type="text" class="form-control" placeholder=".col-xs-3">
+                    </div>
+                    <div class="form-group col-xs-6">
+                        <input type="text" class="form-control" placeholder=".col-xs-6">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <h2>辅助文本</h2>
+            <p>针对表单控件的“块（block）”级辅助文本.
+                在控件后添加 <code>&lt;span class="help-block"></code> 为小一号字体的文本显示在控件下面</p>
+            <div class="tomy-sp1">
+                <form>
+                    <div class="form-group">
+                        <label>Example</label>
+                        <input type="text" class="form-control" placeholder=" ">
+                        <span class="help-block">i'm span.help-block</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

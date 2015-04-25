@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3外观样式样例</title>
+    <style type="text/css">
+        body{
+            font-family: "微软雅黑";
+        }
+        /**按钮**/
+        input[type="button"]{/**一般的时候**/
+            color: whitesmoke;
+            background-color: sandybrown;
+            width: 60px;
+            height: 28px;
+            border-radius: 20px;
+            border:none;
+            margin: 10px;
+        }
+        input[type="button"]:hover{/**鼠标移到上面的时候**/
+            background-color: orange;
+        }
+        input[type="button"]:active{/**鼠标点击的时候**/
+            background-color: skyblue;
+        }
+
+        /**输入框*/
+        input[type="text"]{/**一般的时候**/
+            color: gray;
+            background-color: whitesmoke;
+            width: 120px;
+            height: 28px;
+            border-radius: 20px;
+            border-width: 1px;
+            border-color: darkgray;
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<ul>
+    <li>
+        <input type="button" id="button1" value="按钮">
+    </li>
+    <li>
+        <input type="text" id="test1" value=" 输入框" disabled>
+    </li>
+</ul>
+</body>
+</html>

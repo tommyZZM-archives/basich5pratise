@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>load()</title>
+
+    <!-- Bootstrap style-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link href="../../../../../style_for_sample.css" rel="stylesheet">
+
+    <script>
+        $(function(){
+            $("#btn").click(function(){
+                $("#trace").load("example-6-1-Hello/source.html");
+            })
+        })
+    </script>
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header"><code>load()</code> 方法</h1>
+            <p>在jQuery中使用 <code>load(url, data, ,fn-callback)</code> 方法可以快捷地实现获取异步数据的功能</p>
+            <div class="tomy-sp1">
+                <div class="input-group">
+                    <button type="button" class="btn btn-primary" id="btn">Hello</button>
+                </div>
+                <div class="tomy-sp1" style="max-width: 500px" id="trace"></div>
+            </div>
+
+            <div class="tomy-mk tomy-mk-yellow">
+                <h4><code>load()</code> 还能通过选择器筛选加载源的元素</h4>
+                <p>如: <code>load(a.html .abc)</code>,选择页面哩的abc类 ; <code>load(a.html #haha)</code>,选择页面哩id为haha的部分</p>
+            </div>
+
+            <div class="tomy-mk tomy-mk-red">
+                <h4><code>load()</code> 与 <code>$(doucument).ready()</code> 的执行顺序</h4>
+                <p> <code>$(doucument).ready()</code> 执行完毕后再执行 <code>load()</code> , 因此若要对<code>load()</code>进来的数据对象绑定事件响应,应该在<code>load()</code>的回调函数中进行</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

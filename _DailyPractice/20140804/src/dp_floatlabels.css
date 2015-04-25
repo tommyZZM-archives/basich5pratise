@@ -1,0 +1,64 @@
+/* CSS Document */
+
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+.pan-flp-container{
+    width:420px;
+    background-color: #ffffff;
+    border-radius:6px;
+    overflow:hidden;
+    padding-bottom: 10px;
+}
+
+.pan-flp-container h1,
+.pan-flp-container h2,
+.pan-flp-container h3
+{
+    font-size: 24px;font-weight: normal;
+    background-color: #EEF8EE;color: #3D8F3D;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+
+.pan-flp{
+    padding:0 50px;
+}
+
+.pan-flp div{
+    position:relative;
+    margin-bottom: 30px;
+}
+
+.pan-flp input,.pan-flp label{
+    width: 280px;
+    font-size: 16px;line-height: 24px;
+    border:1px solid #999;
+}
+.pan-flp input{padding: 10px;outline: none;border-radius: 3px;}
+.pan-flp label{position: absolute;left: 0;top: 0;
+    padding: 8px 8px;
+    border-color: transparent;
+    cursor: text;
+    font-weight: normal;
+    background-color: transparent;
+    display: block;
+    margin: 0;
+    max-width: inherit;
+}/*将label的位置放入input*/
+
+/*label styles*/
+.ch{
+    /*border: 1px solid #000000;*/
+    display: block;
+    float: left;
+    position: relative; /*@veryveryImportant!!!! for upward animation*/
+    background: white;
+}
+.ch:first-child{padding-left: 2px;}
+.ch:last-child{padding-right: 2px;}
+
+.focussed{
+    /*pointer-events: none;*/
+}

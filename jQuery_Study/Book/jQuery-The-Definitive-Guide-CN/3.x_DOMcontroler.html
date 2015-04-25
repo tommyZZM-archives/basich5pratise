@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery-DOM文档操作</title>
+
+    <!-- Bootstrap style-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+
+    <link href="../../../style_for_sample.css" rel="stylesheet">
+
+    <style>
+        ul>li>ul li{
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header">jQuery-DOM文档操作</h1>
+            <p>jQuery对DOM文档的操作方法主要有:</p>
+            <ul>
+                <li>html操作
+                    <ul>
+                        <li><code>html([var|fn])</code>//修改或获取html内容 , html(值|赋值函数(必须return))</li>
+                        <li><code>text([var|fn])</code>//修改或获取文本内容(仅获取文本)</li>
+                        <li><code>text([var|fn|arr])</code></li>
+                    </ul>
+                </li>
+                <li>DOM元素/节点操作
+                    <ul>
+                        <li><code>$("&lt;div> example... &lt;/div>")</code>//$也可以用于创建节点元素</li>
+                        <li>内部插入
+                            <ul>
+                                <li><code>append(content|fn)</code> //在元素里面尾部追加content(html内容)</li>
+                                <li><code>appendTo(taget)</code> //把匹配元素追加到target里面尾部</li>
+                                <li><code>prepend(content|fn)</code> //头部</li>
+                                <li><code>prependTo(target)</code></li>
+                            </ul>
+                        </li>
+                        <li>外部插入
+                            <ul>
+                                <li><code>afer(content|fn)</code> //在匹配元素外部后面插入content</li>
+                                <li><code>insertAfter(target)</code> //把匹配元素插入到target的后面</li>
+                                <li><code>before(content|fn)</code></li>
+                                <li><code>insertBefore(target)</code></li>
+                            </ul>
+                        </li>
+                        <li>包子
+                            <ul>
+                                <li><code>wrap(html|ele|fn)</code>//把所有匹配元素用结构化的标记包裹起来,参数中的html代码中不能包括文本</li>
+                                <li><code>unwrap()</code>//移除父元素,父元素会消失掉..</li>
+                                <li><code>wrapALL(html|ele)</code>//将所有匹配元素用一个元素包裹起来</li>
+                                <li><code>wrapInner(htm|ele|fnl)</code>//将每一个匹配的元素的子内容(包括文本节点)用一个HTML结构包裹起来</li>
+                            </ul>
+                        </li>
+                        <li>替换
+                            <ul>
+                                <li><code>replaceWith(content|fn)</code>//将所(有)匹配元素替换成content</li>
+                                <li><code>replaceAll(target)</code>//将所匹配元素(或者内容)替换到target</li>
+                            </ul>
+                        </li>
+                        <li>移除
+                            <ul>
+                                <li><code>empty()</code> //清除元素哩的内容</li>
+                                <li><code>remove(expr)</code> //把元素从文档彻底消灭(所绑定的事件数据都会删除)</li>
+                                <li><code>detach(expr)</code> //把元素从文档中删除(所绑定的事件数据会保留)</li>
+                            </ul>
+                        </li>
+                        <li>复制
+                            <ul>
+                                <li><code>code(Events[,deepEven])</code> //复制,参数是两个boolean值,表示是否复制事件函数和相关数据</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>元素属性操作
+                    <ul>
+                        <li><code>attr(name|pro|key,val|fn)</code>//修改或获取匹配元素的属性 , <small>attr(属性名|属性(名值对象)|(属性名,属性值|赋值函数))</small></li>
+                        <li><code>removeAttr(name)</code>//移除属性</li>
+                        <li><code>prop(name|pro|key,val|fn)</code><strong class="text-danger">1.6+</strong>//获取或修改属性(properties) ,
+                            <br>prop()只能应用于那些w3标准中具有的属性，例如$("a").prop("disabled")就是不可行的</li>
+                        <li><code>removeProp(name)</code><strong class="text-danger">1.6+</strong></li>
+                    </ul>
+                </li>
+                <li>元素值操作
+                    <ul>
+                        <li><code>val([val|fn|arr])</code>//修改或获取值 获取,元素的value值</li>
+                    </ul>
+                </li>
+                <li>CSS类名操作
+                    <ul>
+                        <li><code>addClass(class|fn)</code>//修改或获取css类(名)</li>
+                        <li><code>removeClass([class|fn])</code></li>
+                        <li><code>toggleClass(class|fn[,sw])</code>//切换css类(名),if(class 存在){去除class},eles{增加class}</li>
+                    </ul>
+                </li>
+                <li>CSS样式操作
+                    <ul>
+                        <li><code>css(name[,val|fn]|pro)</code>//设置css样式 css(属性名,(值|赋值函数)|属性(名值对象))</li>
+                        <li><code class="muted">offset([coordinates])</code>//获取匹配元素在当前窗口的相对偏移,返回{top,left},用offset.top的格式访问</li>
+                        <li><code class="muted">position()</code>获取匹配元素相对父元素的偏移,返回{top,left}</li>
+                        <li><code class="muted">scrollTop([val])</code> & <code class="muted">scrollLeft([val])</code> //获取元素相对滚动条的偏移</li>
+                        <li><code class="muted">height(val|fn)</code> & <code class="muted">width(val|fn)</code> //获取或设置匹配元素当前的宽度/高度(<code>px</code>) //可以用来获取 window 和 document 的宽高</li>
+                        <li><code class="muted">innnerHeight()</code> & <code class="muted">innerWidth()</code> //获取匹配元素的内部区域宽高(不包括padding和border)</li>
+                        <li><code class="muted">outterHeight(boolean)</code> & <code class="muted">outterWidth(boolean)</code> //外部区域,参数设置是否包括边距</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>难点&要点</h3>
+            <div class="tomy-mk tomy-mk-blue">
+                <h4><code>attr()</code> 和 <code>prop()</code>的区别 <strong class="text-danger">1.6+</strong></h4>
+                <p>
+                    在1.6以前的版本 <code>attr()</code> 被用来处理所有的属性(attributes和properties),比如checkbox中的<code>checked</code>,
+                    用 <code>attr("checked")</code> 获取其值时,选中就会是(checked="checked"),未选中就是(checked="undefinded").
+                </p>
+                <p>
+                    <strong class="text-info">但实际上checked本身是没有值的,无论是否在html页面中设置checked,当被选中时浏览器就会自动为checkbox添加checked属性,未选中时去掉,并且会不断更新其状态.</strong>
+                </p>
+                <p>
+                    在其它DOM对象中也存在不少这类属性(properties),在以前的版本不加区分的处理attributes和properties,导致了bug和维护困难,
+                    于是jQuery维护团队在1.6新添加了<code>prop()</code>方法来处理这类属性.
+                    当使用<code>prop()</code>去获取properties值时,会动态返回表示其是否生效的<code>boolean</code>值(true/false).
+                </p>
+                <p>
+                    <strong>为了保持向后兼容性和旧attr()方法的有用性,1.6.1以后我们仍然可以使用<code>attr()</code>去设置大部分properties,
+                        即使如此,对于properties还是应该使用 <code>prop()</code> 去处理.以保证对未来版本的兼容性</strong>
+                </p>
+            </div>
+
+            <div class="tomy-mk tomy-mk-yellow">
+                <h4>获取或设置匹配元素</h4>
+                <p>当jQ对象表示一组DOM元素时,如(<code>$("p")</code>//表示所有p元素),对其使用jQ的方法,如(<code>$("p").attr()</code>),仅会获取/设置这组DOM元素里第一个匹配元素的属性(值).相当于<code>$("p")[0].attr()</code>.</p>
+                <p>如果需要对特定的DOM元素操作,需要通过其它选择或者筛选方法确定对应一个DOM对象,如<code>($("p"):first)</code> 事件响应中的<code>$(this)</code> 等...</p>
+            </div>
+
+            <div class="tomy-mk tomy-mk-blue">
+                <h4><code>append(content)</code> 和 <code>appendTo(target)</code>的区别</h4>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

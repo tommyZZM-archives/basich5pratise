@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>图片</title>
+
+    <!-- Bootstrap style-->
+    <link href="../../bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">-->
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link href="../../../style_for_sample.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h1 class="page-header">图片</h1>
+            <div class="tomy-section">
+                <h2>响应式图片</h2>
+                <p>在 Bootstrap 3.0 以上的版本中,通过为图片添加 <code>.img-responsive</code>
+                    类可以让图片支持响应式布局.实际上这只是为图片设置了 <code>max-width:100%</code>
+                    和 <code>height:auto;</code> 属性,从而让图片在其父元素中更好的缩放.
+                </p>
+
+                <div class="tomy-mk tomy-mk-yellow">
+                    <h4>SVG 图像和 IE 8-10</h4>
+                    <blockquote>
+                        <p>在 Internet Explorer 8-10 中，设置为 <code>.img-responsive</code> 的 SVG 图像显示出的尺寸不匀称。为了解决这个问题，在出问题的地方添加 <code>width: 100% \9;</code> 即可。Bootstrap 并没有自动为所有图像元素设置这一属性，因为这会导致其他图像格式出现错乱。</p>
+                    </blockquote>
+                </div>
+
+                <div class="tomy-sp1">
+                    <div style="max-width:360px;margin: 0 auto">
+                        <img src="src/duck.jpg" class="img-responsive">
+                    </div>
+                </div>
+                <div class="tomy-sp2">
+                    <code class="html html-sg-line">
+                        <span>&lt;img src="..." class="<code>img-responsive</code>" alt="Responsive image"></span>
+                    </code>
+                </div>
+            </div>
+            <div class="tomy-section">
+                <h2>图片形状</h2>
+                <p>为图片设置 <code>img-rounded</code> ,<code>img-circle</code> 和 <code>img-thumbnail</code>
+                    能快捷的是图片表现出预设形状</p>
+                <div class="tomy-sp1">
+                    <img src="src/duck.jpg" class="img-rounded" width="100" height="100">
+                    <img src="src/duck.jpg" class="img-circle" width="100" height="100">
+                    <img src="src/duck.jpg" class="img-thumbnail" width="100" height="100">
+                </div>
+
+                <div class="tomy-mk tomy-mk-red">
+                    <h4>跨浏览器兼容性</h4>
+                    <p>Internet Explorer 8 以下不支持 CSS3 中的圆角属性!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5数据存储</title>
+</head>
+<script>
+    function getE(ele){
+        return document.getElementById(ele);
+    }
+
+    function save(type){
+        switch (type){
+            case 'session':
+                //traceArea.innerHTML += 'save!';
+                sessionStorage.setItem('trace',getE('input_1').value+" :"+type);
+                break;
+            case 'local':
+                //traceArea.innerHTML += 'save!';
+                localStorage.setItem('trace',getE('input_1').value+" :"+type);
+                break;
+        }
+    }
+
+    function load(type){
+        switch (type){
+            case 'session':
+                //traceArea.innerHTML += 'read!';
+                output_1.innerHTML = sessionStorage.getItem('trace');
+                break;
+            case 'local':
+                //traceArea.innerHTML += 'read!';
+                output_1.innerHTML = localStorage.getItem('trace');
+                break;
+        }
+
+    }
+
+</script>
+<body>
+<h2>sessionSrotage和localStorage</h2>
+
+<p class="form_item">
+    <a>输出:</a><a class="trace" id="output_1"></a><br>
+    <input type="text" name="input_1" value=" " id="input_1"><a>(填写字符串)</a><br>
+</p>
+
+<p class="form_item">
+    <input type="button" name="btn_11" value="session保存" id="btn_11" onclick="save('session')">
+    <input type="button" name="btn_12" value="session读取" id="btn_12" onclick="load('session')">
+</p>
+
+<p class="form_item">
+    <input type="button" name="btn_21" value="local保存" id="btn_21" onclick="save('local')">
+    <input type="button" name="btn_22" value="local读取" id="btn_22" onclick="load('local')">
+</p>
+<p class="count_wrap">
+    session计数:<span class="count" id="session_count"></span>&nbsp;&nbsp;
+    local计数:<span class="count" id="local_count"></span>
+</p>
+
+<script>
+    //记录页面次数
+    var local_count = localStorage.getItem('a_count')?localStorage.getItem('a_count'):0;
+    getE('local_count').innerHTML = local_count;
+    localStorage.setItem('a_count',+local_count+1);
+
+    var session_count = sessionStorage.getItem('a_count')?sessionStorage.getItem('a_count'):0;
+    getE('session_count').innerHTML = session_count;
+    sessionStorage.setItem('a_count',+session_count+1);
+</script>
+
+<p id="traceArea">
+    <a>trace:</a><br>
+</p>
+</body>
+</html>

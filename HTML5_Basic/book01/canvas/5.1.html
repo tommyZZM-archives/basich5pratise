@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HelloCavas</title>
+</head>
+<script>
+function drawALL() {
+    var List = document.getElementsByTagName("canvas");
+    for (var i = 0; i < List.length; i++) {
+        //trace.innerHTML += List.item(i).id+"<br>";
+        draw(List.item(i).id);
+    }
+}
+
+function draw(id) {
+    var canvas = document.getElementById(id);
+    var context = canvas.getContext('2d');
+    var centerx = (canvas.width >> 1);
+    var centery = (canvas.height >> 1);
+    var fillst;
+    var turns;
+    var image;
+    switch (canvas.id) {
+        case "tommyFirstcanvas":
+            context.beginPath();
+            context.moveTo(66, 160);
+            context.lineTo(160, 66);
+            context.stroke();
+            break;
+        case "tommy2canvas":
+            //context.fillRect((canvas.width >> 1)-45, (canvas.height >> 1)-45, 90, 90);
+            context.fillStyle = "skyblue";
+            context.strokeStyle = "orange";
+            context.lineWidth = 1;
+            context.fillRect(centerx - 33, centery - 33, 66, 66);
+            context.strokeRect(centerx - 45, centery - 45, 90, 90);
+            break;
+        case "tommy3canvas":
+            context.beginPath();
+            context.arc(centerx, centery, 38, 0, Math.PI * 2, true);
+            context.closePath();//注意closePath（封闭）和beginPath（不封闭）的差别
+            context.fillStyle = 'skyblue';
+            context.fill();
+            break;
+        case "tommy4canvas":
+            context.lineWidth = 1;
+            context.beginPath();
+            context.moveTo(20, 20);
+            //创建三次贝塞尔曲线
+            context.bezierCurveTo(100, 20, 20, centery, centerx, centery);
+            context.strokeStyle = "orange";
+            context.stroke();
+            //创建二次贝塞尔曲线
+            context.beginPath();//要重新开始一个路径，不然会出现叠色
+            context.moveTo(centerx, centery);
+            context.quadraticCurveTo(canvas.width - 20, centery, canvas.width - 20, canvas.height - 20);
+            context.strokeStyle = "skyblue";
+            context.stroke();
+            break;
+        case "tommy5canvas":
+            fillst = context.createLinearGradient(0, 0, 0, 300);
+
+            fillst.addColorStop(0, '#00ffd8');
+            fillst.addColorStop(0.5, '#00c6ff');//渐变位置,CSS色值
+            fillst.addColorStop(1, '#005885');
+
+            //可以把lg对象理解成GDI中线性brush
+            context.fillStyle = fillst;
+            //再用这个brush来画正方形
+            drawSolidRect(context, centerx, centery, 120, 120);
+            break;
+        case "tommy6canvas":
+            fillst = context.createRadialGradient(centerx, centery, 0, centerx, centery, 90);
+
+            fillst.addColorStop(0, '#ffa800');
+            fillst.addColorStop(1, '#ff9000');//渐变位置,CSS色值
+
+            //可以把lg对象理解成GDI中线性brush
+            context.fillStyle = fillst;
+            //再用这个brush来画正方形
+            drawSolidCircle(context, centerx, centery, 60, Math.PI * 1.5);
+            break;
+        case "tommy7canvas":
+            turns = 20;
+            setInterval(function () {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.fillStyle = "skyblue";
+                turns < 40 ? (turns++) : ((turns *= -1));
+                turns < 0 ? context.translate(1, 0) : turns > 0 ? context.translate(-1, 0) : null;
+                drawSolidRect(context, centerx, centery, 60, 60);
+            }, 20);
+            break;
+        case "tommy8canvas":
+            setInterval(function () {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.fillStyle = "skyblue";
+                context.translate(centerx, centery);
+                context.rotate((2 / 180) * Math.PI);
+                //
+                drawSolidCircle(context, 49, 49, 10, 0);
+                //
+                context.translate(-centerx, -centery);
+                context.fillStyle = "orange";
+                drawSolidRect(context, centerx, centery, 60, 10);
+                drawSolidRect(context, centerx, centery, 10, 60);
+            }, 20);
+            break;
+        case "tommy9canvas":
+            turns = 0;
+            setInterval(function () {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.fillStyle = "DeepSkyBlue";
+                context.translate(centerx, centery);
+                turns < 60 ? (turns++) : ((turns *= -1));
+                //不准确的！
+                turns > 0 ? alp += context.scale(0.99, 0.99) : {};
+                turns < 0 ? alp += context.scale(1 / 0.99, 1 / 0.99) : {};
+                //trace(sc);
+                context.translate(-centerx, -centery);
+                drawSolidRect(context, centerx, centery, 60, 60);
+            }, 20);
+            break;
+        case "tommy10canvas":
+            var oprtns = [
+                //"source-over"
+                "source-atop",//源香蕉叠加
+                "destination-over",
+                "source-in",
+                "destination-in",
+                "source-out",
+                "destination-out",
+                "destination-atop",
+                "lighter",
+                "xor",
+                "copy"
+            ];
+            var i = 0;//组合效果编号
+
+            //结合setinterval动态显示组合
+            setInterval(function () {
+                context.fillStyle = "skyblue";
+                drawSolidRect(context, centerx, centery, 100, 100);
+                //设置组合方式
+                i >= (oprtns.length - 1) ? i = 0 : i++;//trace(i);
+                context.globalCompositeOperation = oprtns[i];
+                //设置新图形（红色圆形）
+                context.fillStyle = "orange";
+                drawSolidCircle(context, centerx + 49, centery, 30, 0);
+            }, 1000);
+            break;
+        case "tommy11canvas":
+            turns = 0;
+            var alp = 0;
+            setInterval(function () {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.fillStyle = "orange";
+                context.translate(centerx, centery);
+                turns < 60 ? (turns++) : ((turns *= -1));
+                //不准确的！
+                turns > 0 ? alp += 0.05 : {};
+                turns < 0 ? alp -= 0.05 : {};
+                context.globalAlpha = alp;
+                //trace(sc);
+                context.translate(-centerx, -centery);
+                drawSolidCircle(context, centerx, centery, 36, 0);
+            }, 23);
+            break;
+        case "tommy12canvas":
+            context.fillStyle = "orange";
+            context.globalAlpha = 0.66;
+            context.translate(centerx, centery - 20);
+            for (var i = 0; i < 23; i++) {
+                context.translate(10, 10);
+                context.scale(1.06, 1.06);
+                context.rotate(Math.PI / 5);
+                drawSolidCircle(context, 5, 5, 6, 0);
+            }
+            break;
+        case "tommy13canvas":
+            context.setTransform(1, 0, 0, 1, 0, 0);
+            out_m11.value = range_m11.value;
+            out_m12.value = range_m12.value;
+            out_m21.value = range_m21.value;
+            out_m22.value = range_m22.value;
+            transfrom.innerHTML =
+                    "transfrom(" + out_m11.value + "," + out_m12.value + "," + out_m21.value + "," + out_m22.value + ",0,0)"
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.fillStyle = "skyblue";
+            context.transform(out_m11.value, out_m12.value, out_m21.value, out_m22.value, 0, 0);
+            drawSolidRect(context, centerx, centery, 66, 66);
+            break;
+        case "tommy14canvas":
+            context.fillStyle = "orange";
+            context.shadowOffsetX = 2;
+            context.shadowOffsetY = 2;
+            context.shadowBlur = 2;
+            context.shadowColor = "Gray";
+            context.translate(0,-10);
+            drawSolidRect(context,centerx,centery,66,66);
+                //文字
+            context.setTransform(1, 0, 0, 1, 0, 0);
+            context.font = "16px 微软雅黑"
+            context.fillStyle = "Black";
+            context.textAlign = "center";
+            context.fillText("阴影和文字",centerx,(centery+50)*1);
+            break;
+        case "tommy15canvas":
+            image = new Image();
+			image.src = "../../res/HTML5Logo400x.png";
+            var iw =160;
+            var ih = iw;
+
+            image.onload = function (){
+                context.translate((canvas.width-iw)>>1,(canvas.height-ih)>>1);
+                context.drawImage(image,0,0,image.width,image.height,0,0,iw,ih);};
+            break;
+        case "tommy16canvas":
+            image = new Image();
+            image.src = "../../res/HTML5Logo400x.png";
+            var iw =160;
+            var ih = iw;
+            image.onload = function (){
+                context.translate((canvas.width-iw)>>1,(canvas.height-ih)>>1);
+                context.drawImage(image,0,0,image.width,image.height,0,0,iw,ih);
+
+                var tranpoy = canvas.height*0.28;
+                var imagedata = context.getImageData(0, tranpoy, canvas.width, canvas.height);
+                for (var i = 0, n = imagedata.data.length; i < n; i += 4){
+                    imagedata.data[i + 0] = 255 - imagedata.data[i + 0]; //red;
+                    imagedata.data[i + 1] = 255 - imagedata.data[i + 1]; //green
+                    imagedata.data[i + 2] = 255 - imagedata.data[i + 2]; //blue
+                }
+                context.putImageData(imagedata, 0, tranpoy);
+            }
+            break;
+
+    }
+
+}
+
+function drawSolidRect(context, pox, poy, width, height) {
+    context.fillRect(pox - (width >> 1), poy - (height >> 1), width, height);
+}
+
+function drawSolidCircle(context, pox, poy, r, radian) {
+    context.beginPath();
+    context.moveTo(pox, poy);
+    context.arc(pox, poy, r, 0, 2 * Math.PI - radian, true);
+    context.closePath();
+    context.fill();
+}
+
+function trace(e) {
+    traceArea.innerHTML = e + "<br>";
+}
+//window.addEventListener('load',draw(),true);
+</script>
+<body onLoad="drawALL();">
+<ul>
+    <li>
+        <a>tommy的canvas 2013.12.17</a><br>
+        <canvas id="tommyFirstcanvas" style="border: 1px solid" width="230" height="230">
+        </canvas>
+
+        <canvas id="tommy2canvas" style="border: 1px solid skyblue" width="230" height="230">
+        </canvas>
+
+        <canvas id="tommy3canvas" style="border: 1px solid LightSalmon" width="230" height="230">
+        </canvas>
+
+        <canvas id="tommy4canvas" style="border: 1px solid skyblue" width="230" height="230">
+        </canvas>
+    </li>
+    <li>
+        <a>tommy的canvas 2013.12.18&21</a><br>
+        <canvas id="tommy5canvas" style="border: 1px solid LightSalmon" width="230" height="230">
+        </canvas>
+        <canvas id="tommy6canvas" style="border: 1px solid skyblue" width="230" height="230">
+        </canvas>
+        <canvas id="tommy7canvas" style="border: 1px solid LightSalmon" width="230" height="230">
+        </canvas>
+        <canvas id="tommy8canvas" style="border: 1px solid skyblue" width="230" height="230">
+        </canvas>
+        <canvas id="tommy9canvas" style="border: 1px solid LightSalmon" width="230" height="230">
+        </canvas>
+        <canvas id="tommy10canvas" style="border: 1px solid skyblue" width="230" height="230">
+        </canvas>
+        <canvas id="tommy11canvas" style="border: 1px solid LightSalmon" width="230" height="230">
+        </canvas>
+        <canvas id="tommy12canvas" style="border: 1px solid skyblue" width="230" height="230">
+        </canvas>
+    </li>
+    <li>
+        <a>tommy的canvas 2013.12.22 矩阵变换</a><br>
+        <canvas id="tommy13canvas" style="border: 1px solid lightsalmon" width="520" height="520">
+        </canvas>
+        <br>
+        <a id="transfrom">transform(1,0,0,1)</a><br>
+        <input id="range_m11" type="range" min="-2" max="2" step="0.1" value="1" onChange="draw('tommy13canvas')">
+        <output id="out_m11"></output>
+        <br>
+        <input id="range_m12" type="range" min="-2" max="2" step="0.1" value="0" onChange="draw('tommy13canvas')">
+        <output id="out_m12"></output>
+        <br>
+        <input id="range_m21" type="range" min="-2" max="2" step="0.1" value="0" onChange="draw('tommy13canvas')">
+        <output id="out_m21"></output>
+        <br>
+        <input id="range_m22" type="range" min="-2" max="2" step="0.1" value="1" onChange="draw('tommy13canvas')">
+        <output id="out_m22"></output>
+        <br>
+    </li>
+    <li>
+        <a>tommy的canvas 2013.12.22</a><br>
+        <canvas id="tommy14canvas" style="border: 1px solid skyblue" width="230" height="230">
+        </canvas>
+        <canvas id="tommy15canvas" style="border: 1px solid lightsalmon" width="230" height="230">
+        </canvas>
+        <canvas id="tommy16canvas" style="border: 1px solid skyblue" width="230" height="230">
+        </canvas>
+    </li>
+    <li id="traceArea">
+        <a>trace:</a><br>
+    </li>
+</ul>
+</body>
+</html>

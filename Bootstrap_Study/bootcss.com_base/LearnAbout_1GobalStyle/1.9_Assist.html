@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>辅助类</title>
+
+    <!-- Bootstrap style-->
+    <!--<link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="../../bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link href="../../../style_for_sample.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h1 class="page-header">辅助类</h1>
+            <div class="tomy-section">
+                <h2>文本修饰</h2>
+                <p>将以下类应用到文本中可以显示预设的文字颜色</p>
+                <div class="tomy-sp1">
+                    <p class="text-muted">.text-muted</p>
+                    <p class="text-primary">.text-primary</p>
+                    <p class="text-success">.text-success</p>
+                    <p class="text-info">.text-info</p>
+                    <p class="text-warning">text-warning</p>
+                    <p class="text-danger">.text-danger</p>
+                    <br>
+                    <p class="bg-primary">.bg-primary</p>
+                    <p class="bg-success">.bg-success</p>
+                    <p class="bg-info">.bg-info</p>
+                    <p class="bg-warning">.bg-warning</p>
+                    <p class="bg-danger">.bg-danger</p>
+
+                </div>
+
+                <div class="tomy-mk tomy-mk-yellow">
+                    <h4>你知道吗?</h4>
+                    <p>有时候你不能直接在一些控件中使用以上修饰,应当尝试使用 <code>&lt;span></code>
+                        去处理这种情况,以达到你需要的效果.
+                    </p>
+                    <div class="tomy-sp1">
+                        <span class="text-success">i'm text-success span</span>
+                        <span class="bg-warning">i'm bg-warning span</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tomy-section">
+                <h2>特别的按钮</h2>
+                <h3>关闭按钮</h3>
+                <div class="tomy-sp1">
+                    <p>
+                        <button type="button" class="close" style="float: none">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                    </p>
+                </div>
+
+                <h3>三角形の符号</h3>
+                <div class="tomy-sp1">
+                    <span class="caret"></span>
+                </div>
+            </div>
+
+            <div class="tomy-section">
+                <h2>布局类</h2>
+                <p>以下类均能作为less中的函数方法(<code>mixin</code>)使用</p>
+
+                <h3>快速浮动</h3>
+                <p>把 <code>.pull-left</code>或<code>.pull-right</code> 类应用到容器中
+                    能快捷的做出浮动效果,在Bootstrap中,使用了<code>!important</code>去使得
+                    <code>folet</code>属性优先表现
+                </p>
+                <div class="tomy-sp1">
+                    <div class="pull-left">
+                        <button type="button" class="btn btn-default">Button</button>
+                    </div>
+                    <div class="pull-right">
+                        <button type="button" class="btn btn-default">Button</button>
+                    </div>
+                </div>
+
+                <div class="tomy-mk tomy-mk-yellow">
+                    <h4>快速浮动不是给导航条(navbar)用的</h4>
+                    <p>
+                        应该使用导航条(navbar)的对齐实用类,<code>.navbar-left</code>
+                        <code>.navbar-right</code>来代替.浏览
+                        <a href="http://v3.bootcss.com/components/#navbar-component-alignment">See the navbar docs</a>
+                        学习更多细节
+                    </p>
+                </div>
+
+                <h3>消除浮动</h3>
+                <p>添加 <code>.clearfix</code> 到父元素用以快速消除 <code>float</code>
+                    带来的影响.
+                </p>
+
+
+                <h3>块级中心内容(不知为何物)</h3>
+                <p>Set an element to display: block and center via margin. Available as a mixin and class.</p>
+                <div class="tomy-sp1">
+                    <div class="tomy-sp1 center-block" style="max-width: 390px">
+                        <p>i'm center block</p>
+                    </div>
+                    <div class="tomy-sp1 center-block" style="max-width: 390px">
+                        <p>i'm center block</p>
+                    </div>
+                </div>
+
+                <h3>显示和隐藏内容</h3>
+                <p>使用<code>.show</code>和<code>.hidden</code>类来强制显示容器内的内容
+                    在bootstrap中该功能通过 <code>!important;</code>去使得
+                    <code>display:block</code>和
+                    <code>display:none;visibility:hidden</code>优先处理.
+                </p>
+
+                <div class="tomy-mk tomy-mk-yellow">
+                    旧版本的bootstrap的<code>.hide</code>类仍然能够使用,但是在新的版本中
+                    应该尽量使用 <code>.hidden</code> 和 <code>.sr-only</code>去代替.
+                    此外,若使用<code>.invisible</code>来切换元素的可见性,即使元素被设置为
+                    不可见,但它们仍然能够对文档产生影响.
+                </div>
+
+                <div class="tomy-sp1">
+                    <div class="show">
+                        <p>i'm show</p>
+                    </div>
+                    <!--<div class="hidden">-->
+                    <!--<p>i'm hiidem</p>-->
+                    <!--</div>-->
+                    <div class="show invisible">
+                        <p>i'm show?</p>
+                    </div>
+                </div>
+
+                <h3>针对屏幕阅读器的内容</h3>
+                <p>使用 <code>.sr-only</code>可以针对除了 Screen reader 以外的任何设备隐藏元素</p>
+                <a class="sr-only sr-only-focusable" href="#">Skip to main content</a>
+                <div class="tomy-mk tomy-mk-blue">
+                    <a href="http://stackoverflow.com/questions/19758598/what-is-sr-only-in-bootstrap-3/19758620"><code>.sr-only</code>是什么?</a>
+                </div>
+
+                <h3>文本隐藏</h3>
+                <p><code>.text-hide</code>类能隐藏文本,在需要用背景图片把元素的文本内容代替的场合使用</p>
+                <div class="tomy-sp1">
+                    <h1 class="page-header text-hide">hahaha</h1>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>6-6 $.get()</title>
+
+    <!-- Bootstrap style-->
+    <link href="../../../../../Bootstrap_Study/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../../jquery-2.1.1.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="../../../../../Bootstrap_Study/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+
+    <link href="../../../../../style_for_sample.css" rel="stylesheet">
+
+    <script type="text/javascript">
+        $(function(){
+            $("#get").click(function(){
+                $.get("../src/php.php",
+                        {name:"tommy"},
+                        function(data){
+                            $("#trace").html(data);
+                        }
+                )
+            })
+        })
+    </script>
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header">$.get()向服务器请求数据</h1>
+            <p><code>$.get(url,[data],[callbac1k],[type])</code> ,
+                <br><code>url</code>:请求地址(必须) ,
+                <br><code>data</code>:传递参数,格式:{name:data},可选
+                <br><code>callback</code>:回调函数,处理返还数据 如:function(data)
+                <br><code>type</code>:返回数据的格式 xml,html,script,json,test,_default
+            </p>
+            <div class="tomy-sp1">
+                <a class="btn btn-default" id="get">
+                    Let's $.get()
+                </a>
+                <div class="tomy-sp1" id="trace">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

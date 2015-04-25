@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body{
+    text-align: center;
+    padding-top: 100px;
+    background-color: #d2d1cd;
+}
+
+.breadcrumb{
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: whitesmoke;
+    /*background-color: #ff6600;*/
+    /*padding: 10px 20px;*/
+    /*box-shadow: 0 0 16px 2px #CCCCCC;*/
+}
+
+.breadcrumb a{
+    color: white;
+    display: block;
+    outline: none;
+    float: left;
+    font-size: 12px;
+    line-height: 28px;
+    background: #e56500;
+    padding: 0 20px 0 20px;
+    text-align: center;
+    margin-right: 10px;
+    position: relative;
+    text-decoration: none;/**取消下划线**/
+}
+
+/**Basic ele 基本元素 **/
+.breadcrumb a:before, .breadcrumb a:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    border: 0 solid #e56500;
+    border-width: 14px 6px;
+    width: 0;
+    height: 0;
+}
+
+.breadcrumb a:before {
+    left: -6px;
+    border-left-color: transparent;
+}
+.breadcrumb a:after {
+    left: 100%;
+    border-color: transparent;
+    border-left-color: #e56500;
+}
+
+/**过度动画时间**/
+.breadcrumb a, .breadcrumb a:before, .breadcrumb a:after{
+    transition:0.2s;
+}
+
+/**偶数位置的元素**/
+.breadcrumb a:nth-child(even){
+    background: #c95f0c;
+}
+
+.breadcrumb a:nth-child(even):before{
+    border-color: #c95f0c;
+    border-left-color: transparent;
+}
+
+.breadcrumb a:nth-child(even):after{
+    border-color: transparent;
+    border-left-color: #c95f0c;
+}
+
+/**hover**/
+.breadcrumb a:hover{
+    background: #3498db;
+}
+
+.breadcrumb a:hover:before{
+    border-color: #3498db;
+    border-left-color: transparent;
+}
+
+.breadcrumb a:hover:after{
+    border-left-color: #3498db;
+}
+
+
+.breadcrumb a:last-child {
+    content:none;
+    border:none;
+    margin-right: 0;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>导航(组件)</title>
+
+    <!-- Bootstrap style-->
+    <!--<link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="../../bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->`
+
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="js/tomy-btnmeun.js"></script>
+    <link href="../../../style_for_sample.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header">导航</h1>
+            <p>Bootstrap 中的导航组件都依赖同一个 <code>.nav</code> 类，状态类也是共用的。改变修饰类可以改变样式。</p>
+
+            <h2>普通标签页</h2>
+            <p><code>.nav-tabs </code>类依赖 <code>.nav</code> 基类,最终的标签文字要被 <code>&lt;a></code> 包裹</p>
+            <div class="tomy-sp1">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Haha</a></li>
+                    <li><a href="#">ohoh</a></li>
+                </ul>
+            </div>
+            <div class="tomy-mk tomy-mk-blue">
+                <h4>依赖 JavaScript 标签页插件</h4>
+                <p>对于带有可切换标签区域的标签页，必须使用 <a target="_blank" href="http://v3.bootcss.com/javascript/#tabs">
+                    标签页的 JavaScript 插件</a>。</p>
+            </div>
+
+            <h2>文艺标签页</h2>
+            <p>HTML 标记相同，但使用 <code>.nav-pills</code> 类：</p>
+            <div class="tomy-sp1">
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Haha</a></li>
+                    <li><a href="#">ohoh</a></li>
+                </ul>
+            </div>
+            <p>胶囊形态也可以竖直排放 ,使用 <code>.nav-stacked</code></p>
+            <div class="tomy-sp1">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Haha</a></li>
+                    <li><a href="#">ohoh</a></li>
+                </ul>
+            </div>
+
+            <h2>二逼标签页</h2>
+            <p>在大于 768px 的屏幕上，通过 <code>.nav-justified</code> 类可以很容易的让标签页或胶囊式标签呈现出同等宽度。
+                在小屏幕上，导航链接呈现堆叠样式。</p>
+            <div class="tomy-mk tomy-mk-yellow">
+                <h4>Safari 和响应式两端对齐导航</h4>
+                <p>从 v7.0.1 版本开始，Safari 有一个bug：对于两端对齐的导航，水平改变浏览器大小将引起绘制错误。
+                    此bug可以在<a target="_blank" href="http://v3.bootcss.com/examples/justified-nav/">两端对齐的导航实例</a>中得到重现。</p>
+            </div>
+            <div class="tomy-sp1">
+                <ul class="nav nav-pills nav-justified">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Haha</a></li>
+                    <li><a href="#">ohoh</a></li>
+                </ul>
+                <br>
+                <ul class="nav nav-tabs nav-justified">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Haha</a></li>
+                    <li><a href="#">ohoh</a></li>
+                </ul>
+            </div>
+
+            <h2>禁用の链接</h2>
+            <p>对任何导航组件（标签页、胶囊是标签页），都可以添加 <code>.disabled</code> 类
+                <strong>从而实现链接为灰色且没有鼠标悬停效果</strong></p>
+            <p>对于&lt;a>,这个类只改变其样式，不改变其链接功能，可以自己写 JavaScript 禁用这里的链接。</p>
+            <div class="tomy-sp1">
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Haha</a></li>
+                    <li class="disabled"><a href="#">ohoh</a></li>
+                </ul>
+            </div>
+
+            <h2>导航条与下拉菜单</h2>
+            <p>用一点点额外 HTML 代码并加入<a target="_blank" href="http://v3.bootcss.com/javascript/#dropdowns">
+                下拉菜单插件的 JavaScript 插件</a>即可。</p>
+            <div class="tomy-sp1">
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Haha</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#">DropMe<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">d1</a></li>
+                            <li><a href="#">d1</a></li>
+                            <li><a href="#">d3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

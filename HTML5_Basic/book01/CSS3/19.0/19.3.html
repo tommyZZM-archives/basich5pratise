@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Media Queries自适应屏幕</title>
+    <style>
+        body{
+            background: lightgray;
+            margin: 0;
+        }
+        div.topbar{
+            height: 66px;
+            width: 100%;
+            background: #34495e;
+            margin: 0;
+        }
+
+        div.container,div.container>div{
+            width: 1020px;
+            height: 660px;
+            margin: auto;
+            background: ghostwhite;
+			
+			-webkit-transition-duration:0.6s;
+        }
+        .pageFrame#left{
+            float: left;
+            width: 23%;
+            height: 100%;
+            background: #1abc9c;
+        }
+
+        @media screen and (min-width: 1020px){
+
+            div.container{
+                width: 1020px;
+            }
+        }
+
+        /*800到1020的时候*/
+        @media screen and (min-width: 800px) and  (max-width: 1020px){
+            div.container{
+                width: 800px;
+            }
+        }
+
+        @media screen and (min-width: 600px) and  (max-width: 800px){
+            div.container{
+                width: 600px;
+            }
+            .pageFrame#left{
+                width: 100%;
+                height: 16%;
+            }
+        }
+
+        @media screen and (max-width: 600px){
+            div.container{
+                width: 480px;
+            }
+            .pageFrame#left{
+                width: 100%;
+                height: 16%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="topbar">
+
+</div>
+<div class="container">
+    <div class="pageFrame" id="left">
+    </div>
+</div>
+</body>
+</html>

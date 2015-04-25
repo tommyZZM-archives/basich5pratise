@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="UTF-8">
+    <title>aaa</title>
+</head>
+<script>
+    /*parent.document.style.height=document.body.scrollHeight;
+
+    console.log(parent);*/
+
+    function draw(){
+        var canvas = document.getElementById("demo");
+        var context = canvas.getContext('2d');
+        var centerx = (canvas.width >> 1);
+        var centery = (canvas.height >> 1);
+        setInterval(function () {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.fillStyle = "skyblue";
+            context.translate(centerx, centery);
+            context.rotate((2 / 180) * Math.PI);
+            //
+            drawSolidCircle(context, 49, 49, 10, 0);
+            //
+            context.translate(-centerx, -centery);
+            context.fillStyle = "orange";
+            drawSolidRect(context, centerx, centery, 60, 10);
+            drawSolidRect(context, centerx, centery, 10, 60);
+        }, 20);
+    }
+
+    function drawSolidRect(context, pox, poy, width, height) {
+        context.fillRect(pox - (width >> 1), poy - (height >> 1), width, height);
+    }
+
+    function drawSolidCircle(context, pox, poy, r, radian) {
+        context.beginPath();
+        context.moveTo(pox, poy);
+        context.arc(pox, poy, r, 0, 2 * Math.PI - radian, true);
+        context.closePath();
+        context.fill();
+    }
+</script>
+<body onload="draw()">
+<section>
+    <canvas id="demo" width="230" height="230" style="background-color: lightblue"></canvas>
+</section>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS3 3D Effect Plane</title>
+
+    <!-- Bootstrap style-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link href="../../../style_for_sample.css" rel="stylesheet">
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header">CSS3 3D Effect Plane</h1>
+            <div class="tomy-sp1 tomy-sp-general" style="padding-top:30px;background: -webkit-linear-gradient(#555,#999);height: 500px;">
+                <div class="thumb">
+                    <a href="#">
+                        <span>CSS3 3D Effect Plane</span>
+                    </a>
+                </div>
+            </div>
+            <p><a href="http://thecodeplayer.com/walkthrough/3d-thumbnail-image-hover-effect" target="_blank">
+                http://thecodeplayer.com/walkthrough/3d-thumbnail-image-hover-effect
+            </a></p>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .thumb{
+        width: 320px;height: 320px;margin: 50px auto;
+        /*padding-top: 30px;*/
+        /*padding-bottom: 60px;*/
+        -webkit-perspective:800px;
+    }
+    
+    .thumb a{
+        display: block;
+        width: 100%;height: 100%;
+        background:url("picture.png");
+        background-size: cover,cover;
+
+        -webkit-transform-style:preserve-3d;
+
+        -webkit-transform:rotateX(80deg);
+        -webkit-transform-origin:bottom;
+
+        -webkit-transition:all 0.5s;
+    }
+
+    .thumb:hover a{
+        -webkit-transform:rotateX(0deg);
+        -webkit-transform-origin:bottom;
+    }
+
+    .thumb a:after{
+        content:'';position: absolute;left: 0;bottom: 0;
+        width: 100%;height: 26px;
+        background: -webkit-linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url("picture.png");
+        background-size: 0,cover;
+        background-position: bottom;
+        -webkit-transform:rotateX(90deg);
+        -webkit-transform-origin:bottom;
+    }
+
+    .thumb a span{
+        color: #ffffff;
+        position: absolute;top: 100%;left: 0;width: 100%;
+        font: bold 12px;text-align: center;line-height: 26px;
+        -webkit-transform:rotateX(-89.99deg);
+        -webkit-transform-origin:top;
+        z-index: 1;
+    }
+
+    .thumb a:before {
+        content: ''; position: absolute; top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: #333;
+        box-shadow: 0 0 25px 25px #333333;
+        -webkit-transition: all 0.5s;
+        /*by default the shadow will be almost flat, very transparent, scaled down with a large blur*/
+        opacity: 0.23;
+        -webkit-transform: translateZ(-39px) scale(0.85);
+        -webkit-transform-origin: bottom;
+    }
+    .thumb:hover a:before{
+        /*-webkit-transition: all 0.5s;*/
+        opacity: 0;
+    }
+
+
+    
+</style>
+
+</body>
+</html>

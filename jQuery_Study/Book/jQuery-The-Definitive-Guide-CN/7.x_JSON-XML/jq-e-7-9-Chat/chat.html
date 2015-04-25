@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AJAX XML Chater</title>
+
+    <!-- Bootstrap style-->
+    <link href="../../../../../Bootstrap_Study/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../../jquery-2.1.1.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="../../../../../Bootstrap_Study/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+
+    <link href="../../../../../style_for_sample.css" rel="stylesheet">
+
+    <script type="text/javascript">
+        var myname = "";
+        var mycontent = "";
+
+        $(function(){
+            setInterval("updateChat()",2300);//注意第一个参数要用""包裹住
+
+            $("#content").keydown(function(event){
+                if(event.keyCode == 13){
+                    $("#send").trigger('click');
+                }
+            })
+            $("#send").click(function(event){
+                event.preventDefault();
+                myname = $("#name").val();
+                mycontent = $("#content").val();
+                if(mycontent){
+                    $.ajax({
+                        url:"chat.php",
+                        type:"post",
+                        data:{
+                            name:myname,
+                            content:mycontent
+                        },
+                        success:function(data,status){
+                            //updateChat();
+                            $("#content").val("");
+                        }
+                    })
+                }
+            })
+
+            $("#clear").click(function(event){
+                event.preventDefault();
+                $.ajax({
+                    url:"clear.php",
+                    success:function(data,status){
+                        //updateChat();
+                    }
+                })
+            })
+
+        });
+
+        function updateChat(){
+            //alert("update");
+            $.ajax({
+                url:'chatinfo.xml',
+                dataType:"xml",
+                success:function(data,status){
+                    $("#output").empty();
+                    $(data).find('ch').each(function () {
+                        var name = $(this).attr('name');
+                        var time = $(this).attr('time');
+                        var content = $(this).text();
+                        $("#output").append(chatText(name, time, content));
+                        $("#output").scrollTop($("#output")[0].scrollHeight);
+                    });
+                }
+            })
+        }
+
+        function chatText(name,time,content){
+            return "<div class='text-muted'>" +
+                    "<strong>"+name+"</strong><small>&nbsp;"+time+"</small>" +
+                    "</div><p>"+content+"</p>";
+        }
+
+    </script>
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <div class="tomy-sp1 tomy-center" style="width: 60%;padding-bottom: 1px;margin-top: 60px;">
+                <h1 class="page-header" style="position: relative;">
+                    Chat
+                    <div style="float: right;">
+                        <div class="btn-group btn-group-sm">
+                            <a class="btn btn-default" href="chatinfo.xml" target="_blank">
+                                <span class="glyphicon glyphicon-list"></span>
+                            </a>
+                            <a id="clear" class="btn btn-default">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                        </div>
+                    </div>
+                </h1>
+                <div id="output" class="tomy-sp1" style="overflow-y: scroll;height: 160px;">
+                </div>
+                <form>
+                    <div class="form-group">
+                        <input id="content" class="form-control" type="text" placeholder="输入内容...">
+                    </div>
+                    <div class="form-group form-inline" style="position: relative;height: 36px;width: 100%">
+                        <a id="send" class="btn btn-primary" style="float: right;">发送</a>
+                        <div class="input-group" style="width: 32%">
+                            <div class="input-group-addon" style="background: none;"><span class="glyphicon glyphicon-info-sign"></span> </div>
+                            <input id="name" class="form-control" type="text" value="new user" maxlength="9"
+                                   placeholder="...">
+                        </div>
+                    </div>
+                </form>
+                <p style="text-align: center;border-top:1px solid #eee;padding-top: 6px ">
+                    tommy-html5-chater &copy;2014
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

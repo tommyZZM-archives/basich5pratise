@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hello-JQ(tommy20140704)</title>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("p").click(function(){
+                $(this)[0].innerHTML = "Fuck jQuery O(∩_∩)O";
+                $("a#haha").hide();
+                $("a#haha2")[0].innerHTML = "hahaha2";
+                //Jquery没有innerHTML这个属性,$(this).innerHTML 是毫无意义的
+            });
+
+            $("a#haha3")[0].innerHTML = "hahaha3";
+        });
+
+
+    </script>
+</head>
+<body>
+
+<p>点一下我有惊喜哦！</p>
+<a id="haha">哈哈哈！</a>
+<a id="haha2">哈哈哈！</a>
+<a id="haha3">哈哈哈！</a>
+
+</body>
+</html>

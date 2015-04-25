@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>使用hidden对内容隐藏</title>
+        <script type="text/javascript">
+            function Rdo_Click(v) {
+                var strArt = document.getElementById("art");
+                var blnShow = (v) ? strArt.removeAttribute("hidden") : strArt.setAttribute("hidden", blnShow);
+            }
+        </script>
+    </head>
+    <body>
+        <article>
+            图书介绍：
+            <br>
+            <br>
+            这是一本HTML5的入门书。
+        </article>
+        <h5>用户评论</h5>
+        <input type="radio" id="raoShow" onclick="Rdo_Click(1)" name="rdoHidden" value="1" checked="checked"/>
+        显示
+        <input type="radio" id="raoHidden" onclick="Rdo_Click(0)" name="rdoHidden" value="0"/>
+        隐藏
+        <article id="art" class="p3_8">
+            这是一本很少图片的书!里面的代码有错<!--  -->
+        </article>
+    </body>
+</html>

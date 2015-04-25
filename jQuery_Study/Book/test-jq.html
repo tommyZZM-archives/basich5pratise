@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery2.1.1实验</title>
+
+    <!-- Bootstrap style-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="../jquery-2.1.1.js"></script>
+
+    <link href="../../style_for_sample.css" rel="stylesheet">
+
+    <script>
+        $(function(){
+            $("#test-source1").append($("#test-append"));
+            $("#test-source2").appendTo("#test-appendTo");
+        })
+
+        $(function(){
+            $("#warper-small-white li").clone().appendTo("#warp1").wrap("<div class='tomy-sp1'></div>")
+            $("#warper-small-white li").clone().appendTo("#warp2").wrapAll("<div class='tomy-sp1'></div>")
+            $("#warper-small-white li").clone().appendTo("#warp3").wrapInner("<div class='tomy-sp1'></div>")
+        })
+
+        $(function(){
+            $("#Span1").replaceWith("<span title='replaceWith'>Rainier</span>");
+            $("<span title='replaceAll'>han163@163.com</span>").replaceAll("#Span2");
+        })
+
+
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page_header">jQuery2.1.1</h1>
+
+            <h4><code>append(content)</code> 和 <code>appendTo(target)</code>的区别</h4>
+            <div class="tomy-sp1">
+                <p id="test-source1">测试字段1</p>
+                <p id="test-source2">测试字段2</p>
+                <div class="tomy-sp1 tomy-center" id="test-append">append</div>
+                <div class="tomy-sp1 tomy-center" id="test-appendTo">appendTo</div>
+            </div>
+
+            <h4><code>warp()</code></h4>
+            <div class="tomy-sp1">
+                <ul id="warper-small-white">
+                    <li title='苹果'>苹果</li>
+                    <li title='橘子'>橘子</li>
+                    <li title='菠萝'>菠萝</li>
+                </ul>
+
+                <div class="tomy-sp1" id="warp1">
+                    <h4><code>warp()</code></h4>
+                </div>
+
+                <div class="tomy-sp1" id="warp2">
+                    <h4><code>warpAll()</code></h4>
+                </div>
+
+                <div class="tomy-sp1" id="warp3">
+                    <h4><code>warpInner()</code></h4>
+                </div>
+            </div>
+
+            <h4><code>replaceWidth()</code> 和 <code>replaceAll</code></h4>
+            <div class="tomy-sp1">
+                <p>姓名：<span id="Span1"></span></p>
+                <p>邮箱：<span id="Span2"></span></p>
+            </div>
+
+            <h4><code>empty()</code> 和 <code>html("")</code> 和 <code>text("")</code></h4>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

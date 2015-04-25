@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>正则表达式</title>
+
+    <!-- Bootstrap style-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link href="../../style_for_sample.css">
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9" style="float: none;margin: auto;">
+            <h1 class="page-header">正则表达式@_@</h1>
+            <blockquote>
+                <p class="text-danger">如果你没有使用正则表达式的经验，请不要试图在30秒内入门——除非你是超人 :)</p>
+                <footer>
+                    <cite>斯因爱坦</cite>&nbsp;&nbsp;<a target="_blank" href="http://www.cnblogs.com/deerchao/archive/2006/08/24/zhengzhe30fengzhongjiaocheng.html">30分钟学不会正则表达式</a>
+                </footer>
+            </blockquote>
+
+            <a target="_blank" href="http://www.iteye.com/topic/481228/">精通JS正则表达式</a>
+
+            <h4>正则表达式起源 --- 通配符</h4>
+            <p><code>*</code>可以代替0个或多个字符,<code>?</code>可以代替一个字符
+                和通配符类似，正则表达式也是用来进行文本匹配的工具，只不过比起通配符，它能更精确地描述你的需求,当然也更加复杂.
+            </p>
+
+            <h4>学习工具</h4>
+            <a href="http://regexpal.com/" target="_blank">Javascript正则表达式在线测试工具</a>
+
+            <h4>正则表达式字典</h4>
+            <ul>
+                <li>简单匹配符
+                    <ul>
+                        <li><code>.</code> 匹配除了换行符外任何字符,相当于通配符"*"</li>
+                        <li><code>\w</code> 匹配文字字符(字母、汉字..)、数字、下划线 </li>
+                        <li><code>\b</code> 匹配分界处(空格\标点\换行符(<code>\n</code>)) //使用方法:<code>\b</code>(ch)<code>\b</code></li>
+                        <li><code>\d</code> 匹配一只数字(1234567890)</li>
+                        <li><code>\s</code> 匹配空白符 </li>
+                        <li><code>^</code> 匹配开始 </li>
+                        <li><code>$</code> 匹配结束 </li>
+                    </ul>
+                </li>
+                <li>字符类
+                    <ul>
+                        <li><code>[</code><code>]</code> 匹配集合哩任意一个字符 如:<code>[</code>?@#<code>]</code>表示匹配?或@或# 如:<code>[</code>1-6<code>]</code>表示匹配1到6的数字</li>
+                    </ul>
+                </li>
+                <li>反义
+                    <ul>
+                        <li><code>\W</code> 匹配非<del>文字字符(字母、汉字..)、数字、下划线</del>的字符 </li>
+                        <li><code>\B</code> 匹配非<del>分界(空格\标点\换行符)</del>字符
+                        <li><code>\D</code> 匹配非<del>数字</del>字符</li>
+                        <li><code>\S</code> 匹配非<del>空白符</del>字符 </li>
+                        <li><code>[^</code>abcd<code>]</code> 匹配非<del>abcd</del>之外的字符</li>
+                    </ul>
+                </li>
+                <li>转义符
+                    <ul>
+                        <li><code>\</code>当你需要查找正则表达式中功能字符本身(如<code>.</code>),你不能直接使用,
+                            需要先转义成为普通字符(方法<code>\.</code>),使其失去原有功能,查找<code>\</code>本身也需要使用<code>\\</code></li>
+                    </ul>
+                </li>
+                <li>限定符
+                    <ul>
+                        <li><code>*</code> 前边匹配的内容可以连续重复使用任意次(包括0次)</li>
+                        <li><code>+</code> 前边匹配的内容可以连续重复一次以上</li>
+                        <li><code>?</code> 前边匹配的内容可以重复1次或者0次</li>
+                        <li><code>{</code>n<code>}</code>(组合使用) 前面匹配的内容必须连续重复匹配n次 \\还能有两个参数 如{2,10}表示2到12次连续匹配</li>
+                    </ul>
+                </li>
+                <li>懒惰限定符<strong class="text-info">(进阶)</strong>
+                    <p>eg:*?b匹配最短的，以a开始，以b结束的字符串。如果把它应用于aabab的话，它会匹配aab(第一到第三个字符)和ab(第四到第五个字符)</p>
+                    <ul>
+                        <li><code>*?</code> 重复任意次，但尽可能少重复</li>
+                        <li><code>+?</code> 重复1次或更多次，但尽可能少重复</li>
+                        <li><code>??</code> 重复0次或1次，但尽可能少重复</li>
+                        <li><code>{</code>n,m<code>}?</code> 重复n到m次，但尽可能少重复</li>
+                        <li><code>{</code>n,<code>}?</code> 重复n以上，但尽可能少重复</li>
+                    </ul>
+                </li>
+                <li>条件符<strong class="text-info">(进阶)</strong>
+                    <ul>
+                        <li><code>|</code>(或) 匹配符合左或右条件的结果,匹配分枝条件时，将会从左到右地测试每个条件，
+                            如果满足了某个分枝的话，就不会去再管其它的条件了。//eg:0\d{2}-\d{8}|0\d{3}-\d{7} 匹配3位或者4位的电话号码</li>
+                    </ul>
+                </li>
+                <li>分组<strong class="text-info">(进阶)</strong>
+                    <ul>
+                        <li>捕获
+                            <ul>
+                                <li><code>(</code>exp<code>)</code> 匹配exp,并捕获文本到自动命名的组里</li>
+                                <li><code>(?<</code>name<code>></code>exp<code>)</code> 匹配exp,并捕获文本到名称为name的组里，也可以写成
+                                    <code>(?'</code>name<code>'</code>exp<code>)</code></li>
+                                <li><code>(?:</code>name<code>></code>exp<code>)</code> 匹配exp,不捕获匹配的文本，也不给此分组分配组号</li>
+                            </ul>
+                        </li>
+                        <li>零宽断言
+                            <ul>
+                                <li><code>(?=</code>name<code>></code>exp<code>)</code> 匹配exp前面的位置</li>
+                                <li><code>(?<=</code>name<code>></code>exp<code>)</code> 匹配exp后面的位置</li>
+                                <li><code>(?!</code>name<code>></code>exp<code>)</code> 匹配后面跟的不是exp的位置</li>
+                                <li><code>(?&lt;!</code>name<code>></code>exp<code>)</code> 匹配前面跟的不是exp的位置</li>
+                            </ul>
+                        </li>
+                        <li><code>(?#</code>comment<code>)</code> 这种类型的分组不对正则表达式的处理产生任何影响，用于提供注释让人阅读</li>
+                    </ul>
+                </li>
+
+                <li>平衡组/递归匹配<strong class="text-info">(进阶)</strong>
+                    <ul>
+                        <li>...</li>
+                    </ul>
+                </li>
+
+                <li>其他<strong class="text-muted">(...)</strong>
+                    <ul>
+                        <li><code>\a</code> 报警字符(打印它的效果是电脑嘀一声)</li>
+                        <li><code>\b</code> 通常是单词分界位置，但如果在字符类里使用代表退格</li>
+                        <li><code>\t</code> 制表符，Tab</li>
+                        <li>...</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!--<h4>*正则表达式引擎</h4>
+            <p>不同的计算机语言和编译器都有自己的正则表达式引擎,用来解释正则表达式.</p>-->
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

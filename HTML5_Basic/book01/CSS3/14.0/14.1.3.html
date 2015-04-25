@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>background-clip指定背景范围</title>
+    <style type="text/css">
+        li{
+            font-family: "微软雅黑";
+        }
+        div{
+            background:url(../../../res/HTML5Logo400x.png) sandybrown;
+            height: 66px;
+            border: 8px double skyblue;
+            margin: 10px;
+            padding: 6px;
+        }
+        #clip1{
+            background-clip: border-box;/**border位置开始布置背景图片**/
+        }
+        #clip2{
+            background-clip: padding-box;/**pading位置开始布置背景图片**/
+        }
+        #clip3{
+            background-clip: content-box;/**content区域向外剪裁背景图片**/
+        }
+        /**指定背景图片起始点**/
+        #origin1{
+            background-origin: border-box;
+        }
+        #origin2{
+            background-origin: padding-box;
+        }
+        #origin3{
+            background-origin: content-box;
+        }
+        /**制定背景图片尺寸**/
+        #size1{
+            background-size: cover;
+            border-style: double dotted dashed solid;
+            border-color: skyblue slateblue skyblue slateblue;
+        }
+        #size2{
+            background-size: contain;
+        }
+        #size3{
+            background-size: 20%;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>background-clip<br>
+        <div id="clip1"></div>
+        <div id="clip2"></div>
+        <div id="clip3"></div>
+    </li>
+    <li>background-origin<br>
+        <div id="origin1"></div>
+        <div id="origin2"></div>
+        <div id="origin3"></div>
+    </li>
+    <li>background-size<br>
+        <div id="size1"></div>
+        <div id="size2"></div>
+        <div id="size3"></div>
+    </li>
+</ul>
+
+</body>
+</html>

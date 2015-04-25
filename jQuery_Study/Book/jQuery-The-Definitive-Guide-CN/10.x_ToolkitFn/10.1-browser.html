@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>浏览器信息检测</title>
+
+    <!-- Bootstrap style-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link href="../../../../style_for_sample.css" rel="stylesheet">
+
+    <script src="jquery.getbrowser.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            var name = 'name:';
+            //name = JSON.stringify($.browser); //return undefinded
+            //alert( $.browser.version ); // nothing
+
+            var browser = $.getbrowser();
+            $('#trace').text('当前使用的浏览器:'+browser.name+" "+browser.version);
+
+            $('#trace2').text(JSON.stringify($.support));
+        });
+    </script>
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header">浏览器信息检测</h1>
+            <h3>使用.browser对象获取浏览器信息?</h3>
+            <p>使用<code>$.browse</code>获得浏览器的名称<code>$.browse.name</code>和版本<code>$.browse.version</code>信息</p>
+            <div class="tomy-mk tomy-mk-red">
+                <h4>jQuery版本差异兼容性</h4>
+                <p>The $.browser has removed since jquery 1.9</p>
+                <p>我们可以引入<a href="http://code.jquery.com/jquery-migrate-1.0.0.js" target="_blank">jquery-migrate-1.0.0.js</a>以兼容以往版本的jQuery程序,或者自己写一个扩展方法来实现该功能</p>
+                <div class="tomy-sp1" id="trace">
+                </div>
+            </div>
+
+            <h3>判断浏览器的盒子模型</h3>
+            <p>使用<code>$.support.boxModel</code>返回浏览器的盒子模型是否W3C盒子</p>
+            <div class="tomy-mk tomy-mk-red">
+                <h4>jQuery版本差异兼容性</h4>
+                <blockquote>
+                    <p>jQuery2.0版本将不再支持<code>$.support.boxModel</code></p>
+                    <p>我们仍然能使用<code>$.support</code>检测浏览器其它的相关信息</p>
+                    <p><a href="http://bugs.jquery.com/ticket/13743" target="_blank">#13743: Remove jQuery.support.boxModel</a></p>
+                    <footer>
+                        <cite><a href="http://blog.jquery.com/2013/04/18/jquery-2-0-released/" target="_blank">jQuery 2.0 Released</a></cite>
+                    </footer>
+                </blockquote>
+                <div class="tomy-sp1">
+                    <h4>jQuery2.0的$.suppotrt构成</h4>
+                    <p id="trace2" style="word-wrap:break-word;word-break:normal"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

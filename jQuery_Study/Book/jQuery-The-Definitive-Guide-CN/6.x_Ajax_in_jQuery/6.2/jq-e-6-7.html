@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>6-7 $.post()</title>
+
+    <!-- Bootstrap style-->
+    <link href="../../../../../Bootstrap_Study/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../../jquery-2.1.1.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="../../../../../Bootstrap_Study/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+
+    <link href="../../../../../style_for_sample.css" rel="stylesheet">
+
+    <script type="text/javascript">
+        $(function(){
+            $("#post").click(function(){
+                $.post("../src/php.php",
+                        {
+                            name:$("#content").val()
+                        },
+                        function(data){
+                            $("#trace").html(data);
+                        }
+                )
+            })
+        })
+    </script>
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header">$.post()</h1>
+            <div class="tomy-mk tomy-mk-yellow">
+                <h4>post()与get()的差别</h4>
+            </div>
+            <div class="tomy-sp1">
+                <form>
+                    <div class="form-group">
+                        <a class="btn btn-default" id="post">
+                            Let's post()
+                        </a>
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <!--<div class="checkbox">
+                            <label>
+                                <input id="is_bread" type="checkbox" >
+                                <small>包裹哦?</small>
+                            </label>
+                        </div>-->
+                        <input id="content" class="form-control" type="text" placeholder="请输入名字...">
+                        <!--<input type="color" class="form-control">-->
+                    </div>
+                </form>
+
+                <div class="tomy-sp1" id="trace">
+
+                </div>
+            </div>
+
+            <div class="tomy-mk tomy-mk-blue">
+                <h4>jquery serializa()序列化表单</h4>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

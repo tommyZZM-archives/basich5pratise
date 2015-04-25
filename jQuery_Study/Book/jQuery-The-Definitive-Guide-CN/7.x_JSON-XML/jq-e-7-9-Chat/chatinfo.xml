@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE chat [
+<!ELEMENT chat ANY>
+<!ELEMENT ch (#PCDATA)>
+<!ATTLIST ch name CDATA #REQUIRED>
+<!ATTLIST ch time CDATA #REQUIRED>
+]>
+<chat>
+    <!--<ch name="tommy" time="">hahaha</ch>-->
+</chat>

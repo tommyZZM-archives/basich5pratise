@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jQ显示/隐藏</title>
+    <script type="text/javascript" src="../../jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#click1").click(function () {
+                $("#content1").toggle();//通过 jQuery，您可以使用 toggle() 方法来切换 hide() 和 show() 方法。
+            })
+
+            //$(".range").next("a").hasClass("output")
+            //$(".range").change()
+        })
+    </script>
+
+    <style type="text/css">
+        #container {
+            width: 500px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 230px;
+        }
+
+        .box div {
+            border: 1px solid lightgrey;
+            text-align: center;
+            font-size: 12px;
+            line-height: 12px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="container" style="">
+    <h2>toggle显示隐藏</h2>
+
+    <div class="box" style="background-color:lightskyblue;">
+        <div id="click1">
+            <p>点击我~@显示/隐藏面板</p>
+        </div>
+        <div id="content1">
+            <p>在 w3school，你可以找到你所需要的所有的网站建设教程。</p>
+            <p>从基础的 HTML 到 CSS，乃至进阶的XML、SQL、JS、PHP 和 ASP.NET。</p>
+        </div>
+    </div>
+    <div>
+    </div>
+    <br>
+
+    <h2>toggle渐变隐藏</h2>
+
+    <div class="box">
+        <div id="click2">
+            <p>点击我~@渐变/隐藏面板</p>
+            Speed:<input class="range" style="vertical-align: middle" type="range" name="speed" min="1000" max="2300">
+            <a class="output">值</a>
+        </div>
+        <div id="content2">
+            123
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>使用float属性实现多栏布局</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        div#container{
+            width: 980px;
+            margin: auto;/**居中**/
+        }
+        /**div里的div**/
+        div>div{
+            border: 1px solid lightgray;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;/**前缀是指特定浏览器的css样式，moz是firefox**/
+            -webkit-box-sizing: border-box;
+            border-radius: 0px;
+            background: dodgerblue;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div style="float: left;width: 240px;height: 66px"></div>
+    <div style="float: left;width: 500px;height: 126px"></div>
+    <div style="float: left;width: 240px;height: 166px"></div>
+</div>
+</body>
+</html>

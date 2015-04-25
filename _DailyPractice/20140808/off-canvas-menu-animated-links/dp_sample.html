@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Off Canvas Menu with Animated Links</title>
+
+    <!-- Bootstrap style-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link href="../../../style_for_sample.css" rel="stylesheet">
+
+    <style type="text/css">
+        ._co{
+            float: left;position: relative;
+            overflow: hidden;
+        }
+
+        #_tg{display: none;}
+
+        ._co section{
+            background: url("bg_pic.png");
+            width: 960px;
+            height: 720px;
+            position: relative;
+            -webkit-transition:all 0.25s;
+
+        }
+
+        ._co section label{
+            color: #ffffff;
+            font: 14px blod;
+            text-align: center;
+            border: 2px solid #ffffff;
+            border-radius: 4px;
+            display: block;
+            padding: 10px 0;
+            margin-left: auto;margin-right: auto;top: 200px;
+            width: 120px;position:relative;
+            cursor: pointer;text-transform: uppercase;
+
+        }
+
+        .slidenav{
+            background: #393939;
+            width: 234px;height: 760px;
+            position: absolute;
+            left: 0;top: 0;bottom: 0;
+            /*z-index: 1;*/
+            padding-top: 100px;
+            padding-left: 10px;
+        }
+        .slidenav li{
+            list-style-type: none;
+            padding-top: 20px;
+            width:345px;
+            font-size: 20px;line-height: 49px;
+        }
+        .slidenav a{
+            color: #ffffff;
+            text-decoration: none;
+
+        }
+        .slidenav b{
+            font: bold 12px/48px; display: block;
+            -webkit-transform: translateX(345px); -webkit-transition: all 0.4s;
+            margin-left: 60px;
+        }
+        .slidenav span{
+            display: block; width: 50px; float: left;
+            font-size: 16px; line-height: 48px; text-align: center;
+        }
+
+        #_tg:checked ~ section{-webkit-transform: translateX(234px);}
+        #_tg:checked ~ .slidenav b{opacity:1;-webkit-transform: translateX(0px);}
+
+        #_tg:checked ~ .slidenav li:nth-child(1) b {-webkit-transition-delay: 0.08s;}
+        #_tg:checked ~ .slidenav li:nth-child(2) b {-webkit-transition-delay: 0.16s;}
+        #_tg:checked ~ .slidenav li:nth-child(3) b {-webkit-transition-delay: 0.24s;}
+        #_tg:checked ~ .slidenav li:nth-child(4) b {-webkit-transition-delay: 0.32s;}
+        #_tg:checked ~ .slidenav li:nth-child(5) b {-webkit-transition-delay: 0.40s;}
+        #_tg:checked ~ .slidenav li:nth-child(6) b {-webkit-transition-delay: 0.48s;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header">Off Canvas Menu with Animated Links</h1>
+            <div class="tomy-sp1" style="position: absolute">
+                <div class="_co" style="border-radius: 6px;overflow: hidden;">
+                    <input type="checkbox" id="_tg"/>
+                    <ul class="slidenav">
+                        <li><a href="#"><span class="glyphicon glyphicon-home"></span><b>item1</b></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-picture"></span><b>item2</b></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-tree-conifer"></span><b>item3</b></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-info-sign"></span><b>item3</b></a></li>
+                    </ul>
+                    <section>
+                        <label for="_tg">Click Me!</label>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>$.ajax()方法</title>
+
+    <!-- Bootstrap style-->
+    <link href="../../../../../Bootstrap_Study/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../../jquery-2.1.1.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="../../../../../Bootstrap_Study/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+
+    <link href="../../../../../style_for_sample.css" rel="stylesheet">
+
+    <script type="text/javascript">
+        $.ajax({
+            url:"",
+            type:"",
+            dataType:"",
+            data:"",
+            timeout:1000,
+            beforeSend:function(xmlhttpReq){},
+            success:function(data){},
+            complete:function(xmlhttpReq,strStatus){},
+            error:function(xmlhttpReq,strErr,strObj){},
+            goble:true,
+            async:true,
+            cache:false
+        })
+
+    </script>
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header"><code>$.ajax()</code>方法</h1>
+            <p><code>$.ajax()</code>是最底层方法,实现异步调用和与服务器交换数据. <code>$.get()</code>、<code>$.post()</code>等方法均建立在此方法之上。</p>
+            <div class="tomy-sp1">
+                <h4>使用方法</h4>
+                <ul style="list-style-type: none">
+                    <li><code>$.ajax</code>({</li>
+                    <li>
+                        <ul style="list-style-type: none">
+                            <li><code>url</code>:"", //发送请求的地址</li>
+                            <li><code>type</code>:"get", //请求的方式(post或get)</li>
+                            <li><code>dataType</code>:"", //发送的类型(String或者Object)</li>
+                            <li><code>data</code>:"",//html、script、text、xml、json</li>
+                            <li><code>timeout</code>:1000, //请求超时的时间 (Number类型)</li>
+                            <li><code>beforeSend</code>:function(xmlhttpReq){}, //发送请求前</li>
+                            <li><code>complete</code>:function(xmlhttpReq,strStatus){},//请求完成后的回调函数</li>
+                            <li><code>success</code>:function(data,strStatus){},//成功后的回调函数</li>
+                            <li><code>error</code>:function(xmlhttpReq,strErr,strObj){},//请求失败</li>
+                            <li><code>goble</code>:true, //是否响应全局事件</li>
+                            <li><code>async</code>:true, //是否为<code>异步请求</code></li>
+                            <li><code>cache</code>:false, //是否进行页面缓存</li>
+                        </ul>
+                    </li>
+                    <li>})</li>
+                </ul>
+            </div>
+
+            <div class="tomy-mk tomy-mk-yellow">
+                <h4><code>$.ajaxSetup()</code> 统一设置ajax参数</h4>
+                <p>当使用多个<code>$.ajax()</code>方法时,可以使用<code>$.ajaxSetup()</code>方法统一设置$.ajax()其中一些的参数,以此简化代码</p>
+            </div>
+
+            <div class="tomy-mk tomy-mk-blue">
+                <h4>jQuery中的AJAX全局事件</h4>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>事件</th>
+                        <th>功能</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>ajaxComplete(callback)</td>
+                        <td>AJAX请求完成时执行的函数</td>
+                    </tr>
+                    <tr>
+                        <td>ajaxError(callback)</td>
+                        <td>AJAX请求错误时执行的函数</td>
+                    </tr>
+                    <tr>
+                        <td>ajaxSend(callback)</td>
+                        <td>AJAX请求发送时执行的函数</td>
+                    </tr>
+                    <tr>
+                        <td>ajaxStart(callback)</td>
+                        <td>AJAX请求开始时执行的函数</td>
+                    </tr>
+                    <tr>
+                        <td>ajaxStop(callback)</td>
+                        <td>AJAX请求结束时执行的函数</td>
+                    </tr>
+                    <tr>
+                        <td>ajaxScccess(callback)</td>
+                        <td>AJAX请求成功时执行的函数</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="tomy-sp1">
+                    <p>使用方法和其它事件一样,例如为id为Sample的元素绑定ajaxStart()事件</p>
+                    <code>
+                        $("#Sample").ajaxStart(function(){});
+                    </code>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery对象或元素操作</title>
+
+    <!-- Bootstrap style-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link href="../../../../style_for_sample.css" rel="stylesheet">
+
+    <script>
+        $(function(){
+            var obj_info = {
+                name:'tommy',
+                studty:'html5',
+                test:function(){
+                    $("#trace").text('name:'+this.name + ' study:'+this.studty);
+                }
+            }
+
+            $('#btn').click($.proxy(obj_info,'test'))
+        })
+    </script>
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header">jQuery对象或元素操作</h1>
+            <h3>判断对象类型</h3>
+            <ul>
+                <li><code>$.isArray(obj)</code></li>
+                <li><code>$.isFunction(obj)</code></li>
+                <li><code>$.inEmptyObject(obj)</code></li>
+                <li><code>$.isPlainObject(obj)</code>
+                    <a target="_blank"
+                       href="http://snandy.iteye.com/blog/663245">方法解读</a></li>
+                <li><code>$.contains(container,contained)</code>判断DOM节点container是否包含contained</li>
+            </ul>
+
+
+            <h3>$.proxy()处理不同作用域的对象</h3>
+
+            <p><code>jQuery.proxy(function,context)</code></p>
+            <ul>
+                <li><strong>function</strong>将要被改变作用域的函数</li>
+                <li><strong>context</strong>一个object，那个函数的作用域会被设置到这个object上来</li>
+            </ul>
+
+            <p><code>jQuery.proxy(context,name)</code></p>
+            <ul>
+                <li><strong>context</strong>一个object，那个函数的作用域会被设置到这个object上来。</li>
+                <li><strong>name</strong>改变上下文中的函数名(这个函数必须是前一个参数 'context' 对象的属性)</li>
+            </ul>
+
+            <form>
+                <div class="form-group">
+                    <a class="btn btn-default" id="btn">点击我</a>
+                </div>
+            </form>
+            <div class="tomy-sp1" id="trace"></div>
+
+
+            <div class="tomy-mk tomy-mk-blue">
+                <h4><code>$.extend()</code>扩展工具</h4>
+                <p><code>$.extend()</code>方法能够扩展jQuery方法或者对象,
+                    常用于<a href="../8.x_Addon/8.3.0-newMyAddon.html" target="_blank">插件的制作</a>和Obeject对象的扩展</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

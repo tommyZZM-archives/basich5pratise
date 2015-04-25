@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>自定义jQuery插件</title>
+
+    <!-- Bootstrap style-->
+    <link href="../../../../Bootstrap_Study/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../jquery-2.1.1.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="../../../../Bootstrap_Study/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+
+    <link href="../../../../style_for_sample.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header">自定义jQuery插件</h1>
+            <div class="tomy-mk tomy-mk-blue">
+                <h4>什么是插件?</h4>
+
+                <p>就是一些封装好的jquery方法,通过调用插件写好的方法,快捷实现某些功能,而不用自己再用代码实现.</p>
+
+                <p>jQuery插件分为两种:</p>
+                <ul>
+                    <li>类插件 (为jQuery添加新的全局函数,为jQuery类添加新的方法) <code>$.fn({})</code></li>
+                    <li>对象插件 (给jQuery对象添加方法) <code>$("str").fn({})</code></li>
+                </ul>
+
+            </div>
+
+            <div class="tomy-mk tomy-mk-yellow">
+                <h4>jQuery插件开发要点(参考)</h4>
+                <ul>
+                    <li>插件的文件命名必须严格遵循jQuery的js的规则,以便于与其他JS文件的区分,如新插件文件jquery.newplugin.js</li>
+                    <li>如果是对象级别插件,所有的方法都应依附于jquery.fn主体对象,如果是类级别插件,所有的方法都应依附于jquery对象;</li>
+                    <li>无论是对象级还是类级别插件,结尾都必须以分号结束,否则,在文件被压缩时,会出现错误提示信息;</li>
+                    <li>在插件内部的代码中,如果要访问每个元素,可以使用this.each方法来遍历全部元素.</li>
+                    <li>需要说明的是插件的内部,this所代表的是通过jQuery选择器所获取的对象,而非传统意义上的对象的引用;</li>
+                    <li>由于jQuery代码在调用方法时,可以采用链写的方法同时调用多个方法,因此,为了保证这个功能的实现,插件本身必须返回一个jQuery对象.</li>
+                    <li>虽然"$"美元符,可以与"jquery"字符相代替,但在编写插件的代码中,尽量不要使用"$"符号,以避免与别的代码冲突.</li>
+                    <li>在编写对象级别的插件时,使用jQuery.fx.entend()方法进行功能扩展,而针对类级别的插件,则使用jQuery.extend()方法进行扩展.</li>
+                </ul>
+            </div>
+
+            <h3>开发对象级别插件</h3>
+            <div class="tomy-mk">
+                <h4>形式a</h4>
+                <div class="tomy-sp1">
+                    <code class="html"><span>(function($){ </span>
+                        <span>    $.<code>fn</code>.extend({  </span>
+                        <span>        <code>pluginName</code>:function(opt,callback){     </span>
+                        <span>    </span>
+                        <span>        }</span>
+                        <span>    }) </span>
+                        <span>})(jQuery);</span>
+                    </code>
+                </div>
+            </div>
+
+
+            <div class="tomy-mk">
+                <h4>形式b</h4>
+                <div class="tomy-sp1">
+                    <code class="html"><span>(function($){ </span>
+                        <span>    $.<code>fn</code>.<code>pluginName</code> = function(opt,callback) { </span>
+                        <span></span>
+                        <span>    } </span>
+                        <span>})(jQuery);     </span>
+                    </code>
+                </div>
+            </div>
+
+            <h3>类对象级别插件</h3>
+            <div class="tomy-mk">
+                <h4>形式a</h4>
+                <div class="tomy-sp1">
+                    <code class="html"><span>jQuery.extend({ </span>
+                        <span>    <code>pluginName</code>:function(){ </span>
+                        <span></span>
+                        <span>    } </span>
+                        <span>})    </span>
+                    </code>
+                </div>
+            </div>
+
+            <div class="tomy-mk">
+                <h4>形式a</h4>
+                <div class="tomy-sp1">
+                    <code class="html"><span>(function($){ </span>
+                        <span>    $.extend({  </span>
+                        <span>        <code>pluginName</code>:function(opt,callback){     </span>
+                        <span>    </span>
+                        <span>        }</span>
+                        <span>    }) </span>
+                        <span>})(jQuery);</span>
+                    </code>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

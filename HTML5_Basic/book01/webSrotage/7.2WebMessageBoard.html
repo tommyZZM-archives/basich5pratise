@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>tommy的第一个HTML5记事本</title>
+    <link rel="stylesheet" type="text/css" href="jswcss/7.2.css">
+</head>
+<script type="application/javascript">
+    function posmsg(id){
+        var data = document.getElementById(id).value;
+        if (data != ""){
+            var time = new Date().getTime();
+            localStorage.setItem(time,data);
+            loadmsg("trace");
+            document.getElementById(id).value="";
+            document.getElementById("status").innerHTML = '发送成功了哟！';
+            document.getElementById("status").className = "green";
+            var timer =setInterval(function(){
+                document.getElementById("status").innerHTML = '输入文字并发送';
+                document.getElementById("status").className = "normal";
+                clearInterval(timer);
+            },3000)
+        }
+        else{
+            document.getElementById("status").innerHTML = '文字不能为空';
+            document.getElementById("status").className = "warning";
+            var timer =setInterval(function(){
+                document.getElementById("status").innerHTML = '输入文字并发送';
+                document.getElementById("status").className = "normal";
+                clearInterval(timer);
+            },3000)
+        }
+    }
+    function loadmsg(id){
+        var result = '<table border="1">';
+        for(var i=0;i<localStorage.length;i++){
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key);
+            var date = new Date();
+            date.setTime(key);
+            var datestr = date.toGMTString();
+            result+= '<tr><td>' + value + '</td><td>' + datestr + '</td></tr>';
+        }
+        result+="</table>";
+        var tag = document.getElementById(id);
+        tag.innerHTML = result;
+    }
+    function clearmsg(id){
+        localStorage.clear();
+        loadmsg("trace");
+        document.getElementById("status").innerHTML = '列表清空！';
+        document.getElementById("status").className = "warning";
+        var timer =setInterval(function(){
+            document.getElementById("status").innerHTML = '输入文字并发送';
+            document.getElementById("status").className = "normal";
+            clearInterval(timer);
+        },3000)
+
+    }
+</script>
+<body onload="loadmsg('trace')">
+<h2>小tommy的HTML5日记本</h2><a id="status" class="normal">输入文字并发送</a><br>
+<textarea id="mono" cols="66" rows="10"></textarea><br>
+<input id="bnt_go" value="记录" type="button" onclick="posmsg('mono')">
+<input id="clear" value="清空" type="button" onclick="clearmsg('clear')">
+<br>
+<hr>
+<p id="trace"></p>
+</body>
+</html>

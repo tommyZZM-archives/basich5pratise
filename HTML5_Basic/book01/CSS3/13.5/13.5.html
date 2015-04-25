@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>服务器字体</title>
+    <style type="text/css">
+        /* 定义服务器字体，字体名为Tahoma
+        服务器字体对应的字体文件为BAUHS93.ttf */
+        @font-face {
+            font-family: Tahoma;
+            src:local("微软雅黑") url("BAUHS93.TTF") format("TrueType");
+        }
+        @font-face {
+            font-family: Tahoma2;
+            src: url("BAUHS93.TTF") format("TrueType");
+        }
+        .font1{
+            font-family: Tahoma;
+        }
+        .font2{
+            font-family: Tahoma2;
+        }
+    </style>
+</head>
+<script type="text/javascript">
+    var channel=true;
+    function myonclick(){//注意函数名不能够和默认的重名
+        channel = !channel;
+        document.getElementById("text").className = 'font'+(channel?1:2);
+        document.getElementById("traceArea").innerHTML = (channel?"优先使用本地字体":"使用服务器字体");
+    }
+</script>
+<body>
+<!-- 指定Tahoma字体，这是服务器字体 -->
+<div class="font2" id="text" style="font-size:36pt">
+    <a id="textin">
+        this is http://klive.tommyweb
+    </a>
+</div>
+<input id="btn" type="button" value="切换" onclick="myonclick()">
+
+<p id="traceArea">
+</p>
+</body>
+</html>

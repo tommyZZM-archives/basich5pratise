@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Glyphicons图标</title>
+
+    <!-- Bootstrap style-->
+    <!--<link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="../../bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link href="../../../style_for_sample.css" rel="stylesheet">
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9" style="margin:auto;float: none">
+            <h1 class="page-header">Glyphicons 字体图标</h1>
+            <h2>可用的图标</h2>
+            <p>包括200个来自 Glyphicon Halflings 的字体图标。<a href="http://glyphicons.com/">Glyphicons</a> Halflings 一般是收费的，但是他们的作者允许 Bootstrap 免费使用。为了表示感谢，希望你在使用时尽量为 <a href="http://glyphicons.com/">Glyphicons</a> 添加一个友情链接。</p>
+
+            <div class="tomy-mk tomy-mk-blue">
+                <h4>Bootstrap栅格系统 列(column <code>col-*-*</code>) 居中</h4>
+                <p>
+                    栅格系统中的列(<code>col</code>)是使用 <code>float:left</code> 和 <code>width: 75%;</code> 来使列容器偏向左边的,这是Bs哩的默认布局.
+                    取消居中,只需要添加 <code>float:none</code> 取消浮动,之后还需要使用标准的居中方法 <code>magin:auto</code> (<code>magin-left:auto</code>;<code>magin-right:auto</code> )
+                </p>
+            </div>
+
+            <div class="tomy-section">
+                <h2 id="#howuse">How to use?</h2>
+                <p>出于性能的考虑，所有图标都需要一个基类和对应每个图标的类。把下面的代码放在任何地方都可以正常使用。注意，为了设置正确的内补（padding），务必在图标和文本之间添加一个空格。</p>
+                <div class="tomy-mk tomy-mk-red">
+                    <h4>不要和其它组件混用哦</h4>
+                    <p>图标类不能和其它组件直接联合使用。它们不能在同一个元素上与其他类共同存在。应该创建一个嵌套的 <code>&lt;span&gt;</code> 标签，并将图标类应用到这个 <code>&lt;span&gt;</code> 标签上。</p>
+                </div>
+
+                <div class="tomy-mk tomy-mk-red">
+                    <h4>只对内容为空的元素起作用</h4>
+                    <p>图标类只能应用在不包含任何文本内容或子元素的元素上。</p>
+                </div>
+
+                <div class="tomy-mk tomy-mk-blue">
+                    <h4>改变图标字体文件的位置</h4>
+                    <p>Bootstrap 假定所有的图标字体文件全部位于 <code>../fonts/</code> 目录内，相对于预编译版 CSS 文件的目录。如果你修改了图标字体文件的位置，那么，你需要通过下面列出的任何一种方式来更新 CSS 文件：</p>
+                    <ul>
+                        <li>在 Less 源码文件中修改 <code>@icon-font-path</code> 和/或 <code>@icon-font-name</code> 变量。</li>
+                        <li>利用 Less 编译器提供的 <a href="http://lesscss.org/usage/#command-line-usage-relative-urls">相对 URL 地址选项</a>。</li>
+                        <li>修改预编译 CSS 文件中的 <code>url()</code> 地址。</li>
+                    </ul>
+                    <p>根据你自身的情况选择一种方式即可。</p>
+                </div>
+
+                <h2>Example</h2>
+                <div class="tomy-sp1">
+                    <div class="btn-toolbar">
+                        <div class="btn-group">
+                            <button class="btn btn-default">
+                                <span class="glyphicon glyphicon-align-left"></span>
+                            </button>
+                            <button class="btn btn-default">
+                                <span class="glyphicon glyphicon-align-center"></span>
+                            </button>
+                            <button class="btn btn-default">
+                                <span class="glyphicon glyphicon-align-right"></span>
+                            </button>
+                            <button class="btn btn-default">
+                                <span class="glyphicon glyphicon-align-justify"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="btn-toolbar">
+                        <button class="btn btn-default btn-lg">
+                            <span class="glyphicon glyphicon-star"></span>Star
+                        </button>
+                        <button class="btn btn-default">
+                            <span class="glyphicon glyphicon-star-empty"></span>Star
+                        </button>
+                        <button class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-star"></span>Star
+                        </button>
+                        <button class="btn btn-default btn-xs">
+                            <span class="glyphicon glyphicon-star-empty"></span>Star
+                        </button>
+                    </div>
+                </div>
+                <div class="tomy-sp2">
+                    <code class="html"><span>&lt;button class="<code>btn btn-default</code>"></span>
+                        <span>    &lt;span class="<code>glyphicon glyphicon-***</code>">&lt;/span>Button name</span>
+                        <span>&lt;/button></span>
+                    </code>
+                </div>
+
+                <div class="tomy-mk tomy-mk-blue">
+                    <h4>按钮工具条(<code>.btn-toolbar</code>)和按钮组(<code>.btn-group</code>)</h4>
+                    <p>上面的例子中使用了按钮工具条和按钮组,下面很快会有详细介绍~</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

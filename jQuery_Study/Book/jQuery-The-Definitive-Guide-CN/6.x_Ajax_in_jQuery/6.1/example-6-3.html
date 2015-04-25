@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>getJSON()</title>
+
+    <!-- Bootstrap style-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link href="../../../../../style_for_sample.css" rel="stylesheet">
+
+    <script type="text/javascript">
+        $(function(){
+            $("#btn").click(function(){
+                $.getJSON("../src/json.json",function(data){
+                    //alert(data);
+                    var trace = $("#trace");
+
+                    var table = $("#table table tbody");
+                    var table_data = [];
+
+                    trace.empty();
+                    var str = "";
+                    $.each(data,function(name,info){
+                        str += name +":"+ info +"<br>";
+                        if(name == "table"){
+                            table_data = info;
+                            //alert(table_data);
+                        }
+                    });
+                    trace.html(str);
+
+                    table.children("tr").each(function(){
+                        var col =$(this);
+                        var i_col = table.children("tr").index(col);
+                        col.children("th").each(function(){
+                            var cell = $(this);
+                            var i_row = col.children("th").index(cell);
+                            cell.text(table_data[i_col][i_row]);
+                        });
+                    });
+                })
+            })
+        })
+    </script>
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center" style="padding-bottom: 16px">
+            <h1 class="page_header"><code>getJSON()</code></h1>
+            <a id="btn" class="btn btn-primary">getJSON</a><small>&nbsp;src/json.json</small>
+            <div class="tomy-sp1">
+                <pre id="trace"></pre>
+                <div id="table">
+                    <table class="table table-bordered table-hover" style="table-layout:fixed;width: 100px;height: 100px">
+                        <tbody>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

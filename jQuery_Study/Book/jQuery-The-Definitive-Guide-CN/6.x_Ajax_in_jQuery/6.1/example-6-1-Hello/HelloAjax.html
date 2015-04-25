@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Ajax (by general JavaScript)</title>
+
+    <!-- Bootstrap style-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[IF LT ie9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript-->
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link href="../../../../../../style_for_sample.css" rel="stylesheet">
+
+    <script type="text/javascript">
+        var objXmlHttp = null;//创建一个变量,用来储存XMLHttpRequeset对象
+        function CreateXMLHTTP(){
+            //根据浏览器的不同
+            var xmlhttp;
+            if (window.ActiveXObject) {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            else {
+                if (window.XMLHttpRequest){
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else {
+                    alert("init objXmlHttp Fail");
+                    xmlhttp = null;
+                }
+            }
+            return xmlhttp;
+        }
+
+        function GetSentData(){
+            var traceboard = document.getElementById("trace");
+            traceboard.innerHTML = "加载中...";
+
+            //设置地址变量
+            var strSendUrl = "source.html";
+
+            //实例化一个XMLHTTP对象
+            objXmlHttp = CreateXMLHTTP();
+            objXmlHttp.open("GET" , strSendUrl ,true);
+            objXmlHttp.onreadystatechange =
+                    function(){
+                        if(objXmlHttp.readyState == 4) {//请求完成
+                            if(objXmlHttp.status == 200) {
+                            //检查http状态码是否OK 相当于objXmlHttp.statusText == OK
+                                document.getElementById("trace").innerHTML = objXmlHttp.responseText;
+                            }
+                        }
+                    }
+            objXmlHttp.send(null);
+
+        }
+    </script>
+
+</head>
+<body>
+<!-- body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 tomy-center">
+            <h1 class="page-header">Hello Ajax (by general JavaScript)</h1>
+            <p>一小时学会<code>埃及哎X</code></p>
+            <div class="tomy-sp1">
+                <div class="input-group">
+                    <button type="button" class="btn btn-primary" onclick="GetSentData()" id="btn">Hello</button>
+                </div>
+                <div class="tomy-sp1" style="max-width: 500px" id="trace"></div>
+            </div>
+
+            <div class="tomy-mk tomy-mk-blue">
+                <h4>XMLHttpRequest对象 是 AJAX 的基础。</h4>
+                <p>所有现代浏览器均支持 <code>XMLHttpRequest</code> 对象 ,IE5 和 IE6 使用 <code><small>ActiveXObject("Microsoft.XMLHTTP")</small></code></p>
+                <p>XMLHttpRequest 用于在后台与服务器交换数据。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</p>
+            </div>
+
+            <div class="tomy-mk tomy-mk-red">
+                <h4>跨浏览器兼容性</h4>
+                <p>为了应对所有的现代浏览器，包括 IE5 和 IE6，请检查浏览器是否支持 <code>XMLHttpRequest</code> 对象。如果支持，则创建 XMLHttpRequest 对象。如果不支持，则创建 <code><small>ActiveXObject("Microsoft.XMLHTTP")</small></code> </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
